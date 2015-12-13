@@ -100,6 +100,12 @@ COMPRESS_PRECOMPILERS = (
 #CSRF_COOKIE_SECURE = True
 #SESSION_COOKIE_SECURE = True
 
+# Administrators
+ADMINMS = (('Sean Lin', 'sean.linxs@gmail.com'),)
+
+# Email
+EMAIL_HOST = 'localhost'
+
 # Sensitive settings
 with open('/etc/crega/settings.json') as s:
     settings = json.load(s)
