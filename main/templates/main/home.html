@@ -1,13 +1,13 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ page_name }}{% endblock %}
 
 {% block content %}
 
 <div class="primary-container">
     <div class="primary-box" style="background: url(/static/main/images/primary-box-bg.png) -400px -76px no-repeat">
         <div class="primary-box-heading">
-            <a href="#">Proin pellentesque nulla id elit condimentum tempor. Proin pharetra ex sed lorem faucibus luctus. Praesent mi risus, pharetra ut enim eget, maximus blandit nunc.</a>
+            <a href="#">{{ primary_box_text }}</a>
         </div>
     </div>
 </div>
