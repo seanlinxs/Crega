@@ -101,7 +101,7 @@ COMPRESS_PRECOMPILERS = (
 #SESSION_COOKIE_SECURE = True
 
 # Administrators
-ADMINMS = (('Sean Lin', 'sean.linxs@gmail.com'),)
+ADMINS = (('Sean Lin', 'sean.linxs@gmail.com'),)
 
 # Email
 EMAIL_HOST = 'localhost'
