@@ -19,7 +19,7 @@ class Website(models.Model):
 
 
 class Page(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=200)
     site = models.ForeignKey(Website)
     title = models.CharField(max_length=200, help_text="Title will be displayed in both browser's title bar and page title.")
     heading = models.TextField(blank=True)
@@ -34,7 +34,7 @@ class Page(models.Model):
 
 
 class TextBlock(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=200)
     page = models.ForeignKey(Page)
     content = models.TextField()
 
@@ -48,7 +48,7 @@ class TextBlock(models.Model):
 
 
 class PageImage(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=200)
     image = models.FileField(upload_to='pageimages/%Y/%m/%d')
     page = models.ForeignKey(Page)
 
@@ -59,3 +59,14 @@ class PageImage(models.Model):
     
     def __str__(self):
         return "{0}({1}) - {2}".format(self.name, self.size, self.url)
+
+
+class News(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    image = models.FileField(upload_to='newsimages/%Y/%m/%d')
+    site = models.ForeignKey(Website)
+
+
+    class Meta:
+        ordering = ['id']

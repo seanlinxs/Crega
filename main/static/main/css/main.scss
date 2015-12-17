@@ -10,7 +10,7 @@ a, a:hover {
 }
 
 a {
-    color: #A8A8A8;
+    color: #DFDFDF;
 }
 
 a:hover {
@@ -28,21 +28,6 @@ a:hover {
 */
 .dl-horizontal dt {
     white-space: normal;
-}
-
-.navbar, .footer-panel, #footer {
-    a, a:hover {
-        display: block;
-        text-decoration: none;
-    }
-
-    a {
-        color: #A8A8A8;
-    }
-
-    a:hover {
-        color: #FFF;
-    }
 }
 
 .navbar-inverse {
@@ -161,25 +146,31 @@ input#crega-btn-search {
 
 .primary-container {
     width: 100%;
-    margin-top: -20px;
 }
 
 .primary-box {
     height: 288px;
     margin: 0px auto;
-    padding: 50px;
 }
 
 .primary-box-heading {
     width: 50%;
     height: auto;
-    color: #CCC;
-    font-size: 24px;
+    font-size: 28px;
+    padding: 50px;
+}
+
+.primary-box-bgimage {
+    img {
+        position: absolute;
+        z-index: -99;
+        width: 100%;
+        height: 288px;
+    }
 }
 
 .secondary-boxes {
     clear: both;
-    color: #CCC;
     height: auto;
     margin: 0;
     padding-top: 15px;
@@ -206,10 +197,25 @@ input#crega-btn-search {
     }
 }
 
+.secondary-box-heading {
+    height: auto;
+    font-size: 18px;
+    padding: 120px 5px 5px 5px;
+}
+
+.secondary-box-bgimage {
+    img {
+        position: absolute;
+        z-index: -99;
+        width: 350px;
+        height: 248px;
+    }
+}
+
 .news {
     clear: both;
     height: auto;
-    margin: 0;
+    margin: 5px 5px 5px 5px;
     padding-top: 15px;
     position: relative;
     overflow: hidden;
@@ -221,14 +227,15 @@ input#crega-btn-search {
 
         li {
             height: 48px;
+            margin-top: 5px;
             padding: 5px 0 0 10px;
             overflow: inherit;
 
             .news-picture {
                 padding: 5px 5px 5px 5px;
                 float: left;
-                width: 48px;
-                height: 100%;
+                height: 48px;
+                width: 72px;
             }
 
             .news-content {

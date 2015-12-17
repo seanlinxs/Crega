@@ -1,24 +1,122 @@
 from django.views.generic import TemplateView
+from django.shortcuts import get_object_or_404
+
 from main.models import *
 
+def missing_page(name):
+    return 'Please add page [{0}]'.format(name)
 
-class Home(TemplateView):
+
+def missing_textblock(name):
+    return 'Please add text block: [{0}]'.format(name)
+
+
+def missing_image(name, size):
+    return 'Please add image: [{0}] with size [{1}]'.format(name, size)
+
+
+class BaseView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super(BaseView, self).get_context_data(**kwargs)
+        context['media_url'] = 'http://media.seanlinxs.net'
+
+        return context
+
+
+class Home(BaseView):
     template_name = 'main/home.html'
     
 
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
-        page = Page.objects.get(pk=1)
+
+        site = get_object_or_404(Website, name='crega.com.au')
+
+        try:
+            page = site.page_set.get(name='Home')
+            context['page_name'] = page.name
+        except Page.DoesNotExist:
+            context['page_name'] = missing_page('Home')
+            return context
+
         textblocks = page.textblock_set;
-        primary_box_text = textblocks.get(name='Text block #1')
-        context['page_name'] = page.name
-        context['primary_box_text'] = primary_box_text.content
+        pageimages = page.pageimage_set;
+            
+        try:
+            primary_box_text = textblocks.get(name='Primary box text')
+            context['primary_box_text'] = primary_box_text.content
+        except TextBlock.DoesNotExist:
+            context['primary_box_text'] = missing_textblock('Primary box text')
+
+        try:
+            primary_box_image = pageimages.get(name='Primary box image')
+            context['primary_box_image'] = primary_box_image.image
+        except PageImage.DoesNotExist:
+            context['primary_box_image'] = missing_image('Primary box image', '1920×288')
+
+        try:
+            secondary_box_text_1 = textblocks.get(name='Secondary box text 1')
+            context['secondary_box_text_1'] = secondary_box_text_1.content
+        except TextBlock.DoesNotExist:
+            context['secondary_box_text_1'] = missing_textblock('Secondary box text 1')
+
+        try:
+            secondary_box_image_1 = pageimages.get(name='Secondary box image 1')
+            context['secondary_box_image_1'] = secondary_box_image_1.image
+        except PageImage.DoesNotExist:
+            context['secondary_box_image_1'] = missing_image('secondary_box_image_1', '350×248')
+
+        try:
+            secondary_box_text_2 = textblocks.get(name='Secondary box text 2')
+            context['secondary_box_text_2'] = secondary_box_text_2.content
+        except TextBlock.DoesNotExist:
+            context['secondary_box_text_2'] = missing_textblock('Secondary box text 2')
+
+        try:
+            secondary_box_image_2 = pageimages.get(name='Secondary box image 2')
+            context['secondary_box_image_2'] = secondary_box_image_2.image
+        except PageImage.DoesNotExist:
+            context['secondary_box_image_2'] = missing_image('secondary_box_image_2', '350×248')
+
+        try:
+            secondary_box_text_3 = textblocks.get(name='Secondary box text 3')
+            context['secondary_box_text_3'] = secondary_box_text_3.content
+        except TextBlock.DoesNotExist:
+            context['secondary_box_text_3'] = missing_textblock('Secondary box text 3')
+
+        try:
+            secondary_box_image_3 = pageimages.get(name='Secondary box image 3')
+            context['secondary_box_image_3'] = secondary_box_image_3.image
+        except PageImage.DoesNotExist:
+            context['secondary_box_image_3'] = missing_image('secondary_box_image_3', '350×248')
+
+        context['news'] = site.news_set.all()
 
         return context
 
 
-class About(TemplateView):
+class About(BaseView):
     template_name = 'main/about.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super(About, self).get_context_data(**kwargs)
+
+        site = get_object_or_404(Website, name='crega.com.au')
+        
+        try:
+            page = site.page_set.get(name='About')
+            context['page_name'] = page.name
+        except Page.DoesNotExist:
+            context['page_name'] = missing_page('About')
+
+        try:
+            textblock_1 = page.textblock_set.get(name='Text block 1')
+            context['textblock_1'] = textblock_1.content
+        except TextBlock.DoesNotExist:
+            context['textblock_1'] = missing_textblock('Text block 1')
+
+
 
 
 class Product1(TemplateView):
