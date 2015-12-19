@@ -109,6 +109,7 @@ class About(BaseView):
             context['page_name'] = page.name
         except Page.DoesNotExist:
             context['page_name'] = missing_page('About')
+            return context
 
         try:
             textblock_1 = page.textblock_set.get(name='Text block 1')
@@ -116,11 +117,53 @@ class About(BaseView):
         except TextBlock.DoesNotExist:
             context['textblock_1'] = missing_textblock('Text block 1')
 
+        try:
+            pageimage_1 = page.pageimage_set.get(name='Page image 1')
+            context['pageimage_1'] = pageimage_1.image
+        except PageImage.DoesNotExist:
+            context['pageimage_1'] = missing_image('Page image 1', '350×248')
+
+        try:
+            textblock_2 = page.textblock_set.get(name='Text block 2')
+            context['textblock_2'] = textblock_2.content
+        except TextBlock.DoesNotExist:
+            context['textblock_2'] = missing_textblock('Text block 2')
+
+        try:
+            pageimage_2 = page.pageimage_set.get(name='Page image 2')
+            context['pageimage_2'] = pageimage_2.image
+        except PageImage.DoesNotExist:
+            context['pageimage_2'] = missing_image('Page image 2', '350×248')
+        
+        try:
+            textblock_3 = page.textblock_set.get(name='Text block 3')
+            context['textblock_3'] = textblock_3.content
+        except TextBlock.DoesNotExist:
+            context['textblock_3'] = missing_textblock('Text block 3')
+
+        try:
+            pageimage_3 = page.pageimage_set.get(name='Page image 3')
+            context['pageimage_3'] = pageimage_3.image
+        except PageImage.DoesNotExist:
+            context['pageimage_3'] = missing_image('Page image 3', '350×248')
+
+        return context
 
 
-
-class Product1(TemplateView):
+class Product1(BaseView):
     template_name = 'main/product1.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super(Product1, self).get_context_data(**kwargs)
+
+        site = get_object_or_404(Website, name='crega.com.au')
+
+        try:
+            page = site.page_set.get(name='Product1')
+            context['page_name'] = page.name
+        except Page.DoesNotExist:
+            context['page_name'] = missing_page('Product1')
 
 
 class Enquiry(TemplateView):
