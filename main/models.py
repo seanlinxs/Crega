@@ -58,7 +58,7 @@ class PageImage(models.Model):
 
     
     def __str__(self):
-        return "{0}({1}) - {2}".format(self.name, self.size, self.url)
+        return self.name
 
 
 class News(models.Model):
@@ -70,3 +70,7 @@ class News(models.Model):
 
     class Meta:
         ordering = ['id']
+
+
+    def __str__(self):
+        return self.name

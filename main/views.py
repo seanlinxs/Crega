@@ -121,7 +121,7 @@ class About(BaseView):
             pageimage_1 = page.pageimage_set.get(name='Page image 1')
             context['pageimage_1'] = pageimage_1.image
         except PageImage.DoesNotExist:
-            context['pageimage_1'] = missing_image('Page image 1', '350×248')
+            context['pageimage_1'] = missing_image('Page image 1', '455×280')
 
         try:
             textblock_2 = page.textblock_set.get(name='Text block 2')
@@ -133,7 +133,7 @@ class About(BaseView):
             pageimage_2 = page.pageimage_set.get(name='Page image 2')
             context['pageimage_2'] = pageimage_2.image
         except PageImage.DoesNotExist:
-            context['pageimage_2'] = missing_image('Page image 2', '350×248')
+            context['pageimage_2'] = missing_image('Page image 2', '455×280')
         
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
@@ -145,7 +145,7 @@ class About(BaseView):
             pageimage_3 = page.pageimage_set.get(name='Page image 3')
             context['pageimage_3'] = pageimage_3.image
         except PageImage.DoesNotExist:
-            context['pageimage_3'] = missing_image('Page image 3', '350×248')
+            context['pageimage_3'] = missing_image('Page image 3', '455×280')
 
         return context
 
