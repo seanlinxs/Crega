@@ -61,6 +61,20 @@ class PageImage(models.Model):
         return self.name
 
 
+class VideoLink(models.Model):
+    name = models.CharField(max_length=200)
+    link = models.CharField(max_length=500)
+    page = models.ForeignKey(Page)
+
+
+    class Meta:
+        ordering = ['id']
+
+
+    def __str__(self):
+        return self.name
+
+
 class News(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()

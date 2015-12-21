@@ -15,6 +15,10 @@ def missing_image(name, size):
     return 'Please add image: [{0}] with size [{1}]'.format(name, size)
 
 
+def missing_videolink(name):
+    return 'Please add video link: [{0}]'.format(name)
+
+
 class BaseView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(BaseView, self).get_context_data(**kwargs)
@@ -164,6 +168,46 @@ class Product1(BaseView):
             context['page_name'] = page.name
         except Page.DoesNotExist:
             context['page_name'] = missing_page('Product1')
+            return context
+
+        try:
+            textblock_1 = page.textblock_set.get(name='Text block 1')
+            context['textblock_1'] = textblock_1.content
+        except TextBlock.DoesNotExist:
+            context['textblock_1'] = missing_textblock('Text block 1')
+
+        try:
+            videolink_1 = page.videolink_set.get(name='Video link 1')
+            context['videolink_1'] = videolink_1.link
+        except VideoLink.DoesNotExist:
+            context['missing_videolink_1'] = True
+            context['videolink_1'] = missing_videolink('Video link 1')
+
+        try:
+            pageimage_1 = page.pageimage_set.get(name='Page image 1')
+            context['pageimage_1'] = pageimage_1.image
+        except PageImage.DoesNotExist:
+            context['pageimage_1'] = missing_image('Page image 1', '455×280')
+
+        try:
+            textblock_2 = page.textblock_set.get(name='Text block 2')
+            context['textblock_2'] = textblock_2.content
+        except TextBlock.DoesNotExist:
+            context['textblock_2'] = missing_textblock('Text block 2')
+
+        try:
+            pageimage_2 = page.pageimage_set.get(name='Page image 2')
+            context['pageimage_2'] = pageimage_2.image
+        except PageImage.DoesNotExist:
+            context['pageimage_2'] = missing_image('Page image 2', '455×280')
+        
+        try:
+            textblock_3 = page.textblock_set.get(name='Text block 3')
+            context['textblock_3'] = textblock_3.content
+        except TextBlock.DoesNotExist:
+            context['textblock_3'] = missing_textblock('Text block 3')
+
+        return context
 
 
 class Enquiry(TemplateView):
