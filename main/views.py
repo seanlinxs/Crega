@@ -22,7 +22,7 @@ def missing_videolink(name):
 class BaseView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(BaseView, self).get_context_data(**kwargs)
-        context['media_url'] = 'http://media.seanlinxs.net'
+        context['media_url'] = 'http://media.uhome.net.au'
 
         return context
 
