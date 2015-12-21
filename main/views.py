@@ -68,7 +68,7 @@ class Home(BaseView):
             secondary_box_image_1 = pageimages.get(name='Secondary box image 1')
             context['secondary_box_image_1'] = secondary_box_image_1.image
         except PageImage.DoesNotExist:
-            context['secondary_box_image_1'] = missing_image('secondary_box_image_1', '350×248')
+            context['secondary_box_image_1'] = missing_image('Secondary box image 1', '350×248')
 
         try:
             secondary_box_text_2 = textblocks.get(name='Secondary box text 2')
@@ -80,7 +80,7 @@ class Home(BaseView):
             secondary_box_image_2 = pageimages.get(name='Secondary box image 2')
             context['secondary_box_image_2'] = secondary_box_image_2.image
         except PageImage.DoesNotExist:
-            context['secondary_box_image_2'] = missing_image('secondary_box_image_2', '350×248')
+            context['secondary_box_image_2'] = missing_image('Secondary box image 2', '350×248')
 
         try:
             secondary_box_text_3 = textblocks.get(name='Secondary box text 3')
@@ -92,7 +92,7 @@ class Home(BaseView):
             secondary_box_image_3 = pageimages.get(name='Secondary box image 3')
             context['secondary_box_image_3'] = secondary_box_image_3.image
         except PageImage.DoesNotExist:
-            context['secondary_box_image_3'] = missing_image('secondary_box_image_3', '350×248')
+            context['secondary_box_image_3'] = missing_image('Secondary box image 3', '350×248')
 
         context['news'] = site.news_set.all()
 
