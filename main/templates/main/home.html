@@ -1,5 +1,12 @@
 {% extends 'main/base.html' %}
 
+{% load staticfiles %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/slick.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/slick-theme.css' %}" />
+{% endblock %}
+
 {% block title %}{{ page_name }}{% endblock %}
 
 {% block content %}
@@ -7,7 +14,9 @@
 <div class="primary-container">
     <div class="primary-box">
         <div class="primary-box-bgimage">
-            <img src="{{ media_url }}/{{ primary_box_image }}" alt="{{ primary_box_image }}">
+            <img src="{{ media_url }}/{{ primary_box_image_1 }}" alt="{{ primary_box_image_1 }}">
+            <img src="{{ media_url }}/{{ primary_box_image_2 }}" alt="{{ primary_box_image_2 }}">
+            <img src="{{ media_url }}/{{ primary_box_image_3 }}" alt="{{ primary_box_image_3 }}">
         </div>
         <div class="primary-box-heading">
             <a href="#">{{ primary_box_text }}</a>
@@ -65,4 +74,13 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'main/js/slick.min.js' %}"></script>    
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.primary-box-bgimage').slick({dots: true, speed: 500, autoplay: true});
+    });
+</script>
 {% endblock %}

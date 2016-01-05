@@ -149,7 +149,7 @@ input#crega-btn-search {
 }
 
 .primary-box {
-    height: 288px;
+    height: 360px;
     margin: 0px auto;
 }
 
@@ -158,11 +158,13 @@ input#crega-btn-search {
     height: auto;
     font-size: 28px;
     padding: 50px;
+    position: absolute;
+    margin-top: -280px;
 }
 
 .primary-box-bgimage {
     img {
-        position: absolute;
+        /*position: absolute;*/
         z-index: -99;
         width: 100%;
         height: 288px;

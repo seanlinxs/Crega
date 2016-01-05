@@ -17,6 +17,7 @@
     {% compress css %}
     <link rel="stylesheet" type="text/scss" href="{% static 'main/css/main.scss' %}" />
     {% endcompress %}
+    {% block css %}{% endblock %}
     <title>{% block title %}{% endblock %} - Crega</title>
     {% endblock %}
 </head>
@@ -99,5 +100,6 @@
 
     <script type="text/javascript" src="{% static 'main/js/jquery-2.1.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'main/js/bootstrap.min.js' %}"></script>    
+    {% block script %}{% endblock %}
 </body>
 </html>

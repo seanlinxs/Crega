@@ -18,3 +18,5 @@ tests/report/
 .sass-cache/
 media/
 .idea/
+*.swp
+.ropeproject/

@@ -1,7 +1,8 @@
 from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404
 
-from main.models import *
+from main.models import Website, Page, TextBlock, PageImage, VideoLink
+
 
 def missing_page(name):
     return 'Please add page [{0}]'.format(name)
@@ -29,7 +30,6 @@ class BaseView(TemplateView):
 
 class Home(BaseView):
     template_name = 'main/home.html'
-    
 
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
@@ -43,9 +43,9 @@ class Home(BaseView):
             context['page_name'] = missing_page('Home')
             return context
 
-        textblocks = page.textblock_set;
-        pageimages = page.pageimage_set;
-            
+        textblocks = page.textblock_set
+        pageimages = page.pageimage_set
+
         try:
             primary_box_text = textblocks.get(name='Primary box text')
             context['primary_box_text'] = primary_box_text.content
@@ -53,10 +53,22 @@ class Home(BaseView):
             context['primary_box_text'] = missing_textblock('Primary box text')
 
         try:
-            primary_box_image = pageimages.get(name='Primary box image')
-            context['primary_box_image'] = primary_box_image.image
+            primary_box_image_1 = pageimages.get(name='Primary box image 1')
+            context['primary_box_image_1'] = primary_box_image_1.image
         except PageImage.DoesNotExist:
-            context['primary_box_image'] = missing_image('Primary box image', '1920×288')
+            context['primary_box_image_1'] = missing_image('Primary box image 1', '1920×288')
+
+        try:
+            primary_box_image_2 = pageimages.get(name='Primary box image 2')
+            context['primary_box_image_2'] = primary_box_image_2.image
+        except PageImage.DoesNotExist:
+            context['primary_box_image_2'] = missing_image('Primary box image 2', '1920×288')
+
+        try:
+            primary_box_image_3 = pageimages.get(name='Primary box image 3')
+            context['primary_box_image_3'] = primary_box_image_3.image
+        except PageImage.DoesNotExist:
+            context['primary_box_image_3'] = missing_image('Primary box image 3', '1920×288')
 
         try:
             secondary_box_text_1 = textblocks.get(name='Secondary box text 1')
@@ -102,12 +114,11 @@ class Home(BaseView):
 class About(BaseView):
     template_name = 'main/about.html'
 
-
     def get_context_data(self, **kwargs):
         context = super(About, self).get_context_data(**kwargs)
 
         site = get_object_or_404(Website, name='crega.com.au')
-        
+
         try:
             page = site.page_set.get(name='About')
             context['page_name'] = page.name
@@ -138,7 +149,7 @@ class About(BaseView):
             context['pageimage_2'] = pageimage_2.image
         except PageImage.DoesNotExist:
             context['pageimage_2'] = missing_image('Page image 2', '455×280')
-        
+
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
             context['textblock_3'] = textblock_3.content
@@ -156,7 +167,6 @@ class About(BaseView):
 
 class Product1(BaseView):
     template_name = 'main/product1.html'
-
 
     def get_context_data(self, **kwargs):
         context = super(Product1, self).get_context_data(**kwargs)
@@ -201,7 +211,7 @@ class Product1(BaseView):
             context['pageimage_2'] = pageimage_2.image
         except PageImage.DoesNotExist:
             context['pageimage_2'] = missing_image('Page image 2', '455×280')
-        
+
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
             context['textblock_3'] = textblock_3.content
@@ -213,7 +223,6 @@ class Product1(BaseView):
 
 class Product2(BaseView):
     template_name = 'main/product2.html'
-
 
     def get_context_data(self, **kwargs):
         context = super(Product2, self).get_context_data(**kwargs)
@@ -258,7 +267,7 @@ class Product2(BaseView):
             context['pageimage_2'] = pageimage_2.image
         except PageImage.DoesNotExist:
             context['pageimage_2'] = missing_image('Page image 2', '455×280')
-        
+
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
             context['textblock_3'] = textblock_3.content
@@ -270,7 +279,6 @@ class Product2(BaseView):
 
 class Product3(BaseView):
     template_name = 'main/product3.html'
-
 
     def get_context_data(self, **kwargs):
         context = super(Product3, self).get_context_data(**kwargs)
@@ -315,7 +323,7 @@ class Product3(BaseView):
             context['pageimage_2'] = pageimage_2.image
         except PageImage.DoesNotExist:
             context['pageimage_2'] = missing_image('Page image 2', '455×280')
-        
+
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
             context['textblock_3'] = textblock_3.content
@@ -327,7 +335,6 @@ class Product3(BaseView):
 
 class Product4(BaseView):
     template_name = 'main/product4.html'
-
 
     def get_context_data(self, **kwargs):
         context = super(Product4, self).get_context_data(**kwargs)
@@ -372,7 +379,7 @@ class Product4(BaseView):
             context['pageimage_2'] = pageimage_2.image
         except PageImage.DoesNotExist:
             context['pageimage_2'] = missing_image('Page image 2', '455×280')
-        
+
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
             context['textblock_3'] = textblock_3.content
@@ -384,7 +391,6 @@ class Product4(BaseView):
 
 class Service1(BaseView):
     template_name = 'main/service1.html'
-
 
     def get_context_data(self, **kwargs):
         context = super(Service1, self).get_context_data(**kwargs)
@@ -429,7 +435,7 @@ class Service1(BaseView):
             context['pageimage_2'] = pageimage_2.image
         except PageImage.DoesNotExist:
             context['pageimage_2'] = missing_image('Page image 2', '455×280')
-        
+
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
             context['textblock_3'] = textblock_3.content
@@ -441,7 +447,6 @@ class Service1(BaseView):
 
 class Service2(BaseView):
     template_name = 'main/service2.html'
-
 
     def get_context_data(self, **kwargs):
         context = super(Service2, self).get_context_data(**kwargs)
@@ -486,7 +491,7 @@ class Service2(BaseView):
             context['pageimage_2'] = pageimage_2.image
         except PageImage.DoesNotExist:
             context['pageimage_2'] = missing_image('Page image 2', '455×280')
-        
+
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
             context['textblock_3'] = textblock_3.content
