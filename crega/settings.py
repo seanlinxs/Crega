@@ -129,3 +129,6 @@ with open('/etc/crega/settings.json') as s:
             'CONN_MAX_AGE': settings['DBCONN_MAX_AGE'],
         }
     }
+
+    # Media host
+    MEDIA_HOST = settings['MEDIA_HOST']

@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404
 
 from main.models import Website, Page, TextBlock, PageImage, VideoLink
+from crega.settings import MEDIA_HOST
 
 
 def missing_page(name):
@@ -23,7 +24,7 @@ def missing_videolink(name):
 class BaseView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(BaseView, self).get_context_data(**kwargs)
-        context['media_url'] = 'http://media.uhome.net.au'
+        context['media_url'] = MEDIA_HOST
 
         return context
 
