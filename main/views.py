@@ -516,3 +516,16 @@ class Privacy(TemplateView):
 
 class Terms(TemplateView):
     template_name = 'main/terms.html'
+
+
+class News(BaseView):
+    template_name = 'main/news.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(News, self).get_context_data(**kwargs)
+
+        site = get_object_or_404(Website, name='crega.com.au')
+        news = site.news_set.all()
+        context['news'] = news
+
+        return context

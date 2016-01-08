@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^contact/$', Contact.as_view(), name='contact'),
     url(r'^privacy/$', Privacy.as_view(), name='privacy'),
     url(r'^terms/$', Terms.as_view(), name='terms'),
+    url(r'^news/$', News.as_view(), name='news'),
 ]

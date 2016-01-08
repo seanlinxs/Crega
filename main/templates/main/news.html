@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}News{% endblock %}
+
+{% block content %}
+
+<div class="row news">
+  <ul>
+    {% for n in news %}
+    <li>
+      <div class="news-picture" style="background: url({{ media_url }}/{{ n.image }}) no-repeat"></div>
+      <div class="news-content">
+        <a href="#">{{ n.title }}</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
