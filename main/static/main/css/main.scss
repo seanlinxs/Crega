@@ -1,4 +1,4 @@
-﻿body {
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -31,8 +31,20 @@ a:hover {
 }
 
 .navbar-inverse {
-    background: -webkit-linear-gradient(top, #595C64, #1B1B1C);
+    background-color: #EFEFEF;
     border-top: 1px solid #FFF;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #6D6D6D;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #3D3D3D;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #3D3D3D;
 }
 
 input#crega-search {
