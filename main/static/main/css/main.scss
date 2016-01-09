@@ -240,7 +240,7 @@ input#crega-btn-search {
         display: block;
 
         li {
-            height: 48px;
+            height: 72px;
             margin-top: 5px;
             padding: 5px 0 0 10px;
             overflow: inherit;
@@ -248,8 +248,8 @@ input#crega-btn-search {
             .news-picture {
                 padding: 5px 5px 5px 5px;
                 float: left;
-                height: 48px;
-                width: 72px;
+                height: 72px;
+                width: 108px;
             }
 
             .news-content {
@@ -277,6 +277,26 @@ input#crega-btn-search {
     width: 100%;
     height: 280px;
     overflow: hidden;
+}
+
+.news-image-container {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.news-heading {
+    font-size: 20pt;
+}
+
+.action {
+    a {
+        color: #AFAFAF;
+    }
+
+    a:hover {
+        color: #0068FF;
+    }
 }
 
 .section {
@@ -307,4 +327,25 @@ input#crega-btn-search {
         text-decoration: underline;
         color: blue;
     }    
+}
+
+.thumbnail {
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.thumbnail img.portrait {
+  width: 100%;
+  height: auto;
 }

@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404
 
-from main.models import Website, Page, TextBlock, PageImage, VideoLink
+from main.models import Website, Page, TextBlock, PageImage, VideoLink, News
 from crega.settings import MEDIA_HOST
 
 
@@ -518,14 +518,26 @@ class Terms(TemplateView):
     template_name = 'main/terms.html'
 
 
-class News(BaseView):
+class AllNews(BaseView):
     template_name = 'main/news.html'
 
     def get_context_data(self, **kwargs):
-        context = super(News, self).get_context_data(**kwargs)
+        context = super(AllNews, self).get_context_data(**kwargs)
 
         site = get_object_or_404(Website, name='crega.com.au')
         news = site.news_set.all()
+        context['news'] = news
+
+        return context
+
+
+class SingleNews(BaseView):
+    template_name = 'main/singlenews.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(SingleNews, self).get_context_data(**kwargs)
+
+        news = get_object_or_404(News, pk=self.kwargs.get('pk'))
         context['news'] = news
 
         return context
