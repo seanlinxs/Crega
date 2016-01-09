@@ -104,6 +104,14 @@ input#crega-btn-search {
         font-size: 1em;
         color: #FCB712;
         font-weight: bold;
+
+        a {
+          color: #FCB712;
+        }
+
+        a:hover {
+          color: #FFF;
+        }
     }
 
     ul {
