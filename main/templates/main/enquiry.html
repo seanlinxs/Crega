@@ -6,17 +6,19 @@
 
 <div class="container">
 
-    <h3>
-        Send us your questions and enquiries by filling following form, we will response soon.
-    </h3>
+    <h3>Send us your questions and enquiries by filling the following form to enable us to response ASAP.</h3>
 
     <form method="post" id="enquiry-form">
+        {{ form.non_field_errors }}
         <div class="row form-group">
             <div class="col-md-3">
                 <label>First name</label>
             </div>
             <div class="col-md-7">
-                <input type="text" name="FirstName" placeholder="First name" />
+                <input type="text" name="firstname" placeholder="First name" />
+            </div>
+            <div class="col-md-2">
+                {{ form.firstname.errors }}
             </div>
         </div>
 
@@ -25,7 +27,10 @@
                 <label>Last name</label>
             </div>
             <div class="col-md-7">
-                <input type="text" name="LastName" placeholder="Last name" />
+                <input type="text" name="lastname" placeholder="Last name" />
+            </div>
+            <div class="col-md-2">
+                {{ form.lastname.errors }}
             </div>
         </div>
 
@@ -34,25 +39,46 @@
                 <label>Email <span class="required">*</span></label>
             </div>
             <div class="col-md-7">
-                <input type="text" name="Email" placeholder="Email" required />
+                <input type="text" name="email" placeholder="Email" required />
+            </div>
+            <div class="col-md-2">
+                {{ form.email.errors }}
             </div>
         </div>
 
+        <div class="row form-group">
+            <div class="col-md-3">
+                <label>Company</label>
+            </div>
+            <div class="col-md-7">
+                <input type="text" name="company" placeholder="Company" />
+            </div>
+            <div class="col-md-2">
+                {{ form.company.errors }}
+            </div>
+        </div>
+        
         <div class="row form-group">
             <div class="col-md-3">
                 <label>Phone</label>
             </div>
             <div class="col-md-7">
-                <input type="text" name="Phone" placeholder="Phone" />
+                <input type="text" name="phone" placeholder="Phone" />
+            </div>
+            <div class="col-md-2">
+                {{ form.phone.errors }}
             </div>
         </div>
 
         <div class="row form-group">
             <div class="col-md-3">
-                <label>Content</label>
+                <label>Message</label>
             </div>
             <div class="col-md-7">
-                <textarea name="Content" rows="10" placeholder="Content"></textarea>
+                <textarea name="message" rows="10" placeholder="Message"></textarea>
+            </div>
+            <div class="col-md-2">
+                {{ form.message.errors }}
             </div>
         </div>
 

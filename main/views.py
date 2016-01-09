@@ -1,7 +1,10 @@
-from django.views.generic import TemplateView
-from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView, FormView
+from django.shortcuts import get_object_or_404, redirect
+from django.core.urlresolvers import reverse
+from urllib.parse import urlencode
 
 from main.models import Website, Page, TextBlock, PageImage, VideoLink, News
+from main.forms import EnquiryForm
 from crega.settings import MEDIA_HOST
 
 
@@ -502,19 +505,26 @@ class Service2(BaseView):
         return context
 
 
-class Enquiry(TemplateView):
+class Enquiry(FormView):
     template_name = 'main/enquiry.html'
+    form_class = EnquiryForm
+
+    def form_valid(self, form):
+        form.send_email()
+        success_url = '{0}?{1}'.format(reverse('thanks'), urlencode({'firstname': form.cleaned_data['firstname'], 'lastname': form.cleaned_data['lastname']}))
+
+        return redirect(success_url)
 
 
-class Contact(TemplateView):
+class Contact(BaseView):
     template_name = 'main/contact.html'
 
 
-class Privacy(TemplateView):
+class Privacy(BaseView):
     template_name = 'main/privacy.html'
 
 
-class Terms(TemplateView):
+class Terms(BaseView):
     template_name = 'main/terms.html'
 
 
@@ -539,5 +549,16 @@ class SingleNews(BaseView):
 
         news = get_object_or_404(News, pk=self.kwargs.get('pk'))
         context['news'] = news
+
+        return context
+
+
+class Thanks(BaseView):
+    template_name = 'main/thanks.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Thanks, self).get_context_data(**kwargs)
+        context['firstname'] = self.request.GET.get('firstname')
+        context['lastname'] = self.request.GET.get('lastname')
 
         return context

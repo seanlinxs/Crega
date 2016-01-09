@@ -103,9 +103,6 @@ COMPRESS_PRECOMPILERS = (
 # Administrators
 ADMINS = (('Sean Lin', 'sean.linxs@gmail.com'),)
 
-# Email
-EMAIL_HOST = 'localhost'
-
 # Sensitive settings
 with open('/etc/crega/settings.json') as s:
     settings = json.load(s)
@@ -132,3 +129,8 @@ with open('/etc/crega/settings.json') as s:
 
     # Media host
     MEDIA_HOST = settings['MEDIA_HOST']
+
+    # Email
+    EMAIL_HOST = settings['EMAIL_HOST']
+    EMAIL_PORT = settings['EMAIL_PORT']
+    ENQUIRY_EMAIL = settings['ENQUIRY_EMAIL']

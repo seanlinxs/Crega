@@ -32,4 +32,5 @@ urlpatterns = [
     url(r'^terms/$', Terms.as_view(), name='terms'),
     url(r'^news/$', AllNews.as_view(), name='news'),
     url(r'^news/(?P<pk>\d+)/$', SingleNews.as_view(), name='singlenews'),
+    url(r'^thanks/$', Thanks.as_view(), name='thanks'),
 ]
