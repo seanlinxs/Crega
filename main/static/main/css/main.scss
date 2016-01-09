@@ -172,6 +172,7 @@ input#crega-btn-search {
     padding: 50px;
     position: absolute;
     margin-top: -280px;
+    color: #FFF;
 }
 
 .primary-box-bgimage {
@@ -348,4 +349,9 @@ input#crega-btn-search {
 .thumbnail img.portrait {
   width: 100%;
   height: auto;
+}
+
+.heading {
+  font-size: 24pt;
+  font-weight: bold;
 }
