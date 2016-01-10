@@ -75,6 +75,12 @@ class Home(BaseView):
             context['primary_box_image_3'] = missing_image('Primary box image 3', '1920×288')
 
         try:
+            primary_box_image_4 = pageimages.get(name='Primary box image 4')
+            context['primary_box_image_4'] = primary_box_image_4.image
+        except PageImage.DoesNotExist:
+            context['primary_box_image_4'] = missing_image('Primary box image 4', '1920×288')
+
+        try:
             secondary_box_text_1 = textblocks.get(name='Secondary box text 1')
             context['secondary_box_text_1'] = secondary_box_text_1.content
         except TextBlock.DoesNotExist:
