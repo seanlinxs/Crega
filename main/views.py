@@ -138,7 +138,7 @@ class About(BaseView):
 
         try:
             textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content
+            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_1'] = missing_textblock('Text block 1')
 
@@ -150,7 +150,7 @@ class About(BaseView):
 
         try:
             textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content
+            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_2'] = missing_textblock('Text block 2')
 
@@ -162,7 +162,7 @@ class About(BaseView):
 
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content
+            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_3'] = missing_textblock('Text block 3')
 
@@ -176,7 +176,7 @@ class About(BaseView):
 
 
 class Product1(BaseView):
-    template_name = 'main/product1.html'
+    template_name = 'main/product.html'
 
     def get_context_data(self, **kwargs):
         context = super(Product1, self).get_context_data(**kwargs)
@@ -193,7 +193,7 @@ class Product1(BaseView):
 
         try:
             textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content
+            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_1'] = missing_textblock('Text block 1')
 
@@ -212,7 +212,7 @@ class Product1(BaseView):
 
         try:
             textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content
+            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_2'] = missing_textblock('Text block 2')
 
@@ -224,7 +224,7 @@ class Product1(BaseView):
 
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content
+            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_3'] = missing_textblock('Text block 3')
 
@@ -232,7 +232,7 @@ class Product1(BaseView):
 
 
 class Product2(BaseView):
-    template_name = 'main/product2.html'
+    template_name = 'main/product.html'
 
     def get_context_data(self, **kwargs):
         context = super(Product2, self).get_context_data(**kwargs)
@@ -249,7 +249,7 @@ class Product2(BaseView):
 
         try:
             textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content
+            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_1'] = missing_textblock('Text block 1')
 
@@ -268,7 +268,7 @@ class Product2(BaseView):
 
         try:
             textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content
+            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_2'] = missing_textblock('Text block 2')
 
@@ -280,7 +280,7 @@ class Product2(BaseView):
 
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content
+            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_3'] = missing_textblock('Text block 3')
 
@@ -288,7 +288,7 @@ class Product2(BaseView):
 
 
 class Product3(BaseView):
-    template_name = 'main/product3.html'
+    template_name = 'main/product.html'
 
     def get_context_data(self, **kwargs):
         context = super(Product3, self).get_context_data(**kwargs)
@@ -305,7 +305,7 @@ class Product3(BaseView):
 
         try:
             textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content
+            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_1'] = missing_textblock('Text block 1')
 
@@ -324,7 +324,7 @@ class Product3(BaseView):
 
         try:
             textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content
+            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_2'] = missing_textblock('Text block 2')
 
@@ -336,7 +336,7 @@ class Product3(BaseView):
 
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content
+            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_3'] = missing_textblock('Text block 3')
 
@@ -344,7 +344,7 @@ class Product3(BaseView):
 
 
 class Product4(BaseView):
-    template_name = 'main/product4.html'
+    template_name = 'main/product.html'
 
     def get_context_data(self, **kwargs):
         context = super(Product4, self).get_context_data(**kwargs)
@@ -361,7 +361,7 @@ class Product4(BaseView):
 
         try:
             textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content
+            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_1'] = missing_textblock('Text block 1')
 
@@ -380,7 +380,7 @@ class Product4(BaseView):
 
         try:
             textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content
+            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_2'] = missing_textblock('Text block 2')
 
@@ -392,7 +392,7 @@ class Product4(BaseView):
 
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content
+            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_3'] = missing_textblock('Text block 3')
 
@@ -400,7 +400,7 @@ class Product4(BaseView):
 
 
 class Service1(BaseView):
-    template_name = 'main/service1.html'
+    template_name = 'main/product.html'
 
     def get_context_data(self, **kwargs):
         context = super(Service1, self).get_context_data(**kwargs)
@@ -417,7 +417,7 @@ class Service1(BaseView):
 
         try:
             textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content
+            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_1'] = missing_textblock('Text block 1')
 
@@ -436,7 +436,7 @@ class Service1(BaseView):
 
         try:
             textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content
+            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_2'] = missing_textblock('Text block 2')
 
@@ -448,7 +448,7 @@ class Service1(BaseView):
 
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content
+            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_3'] = missing_textblock('Text block 3')
 
@@ -456,7 +456,7 @@ class Service1(BaseView):
 
 
 class Service2(BaseView):
-    template_name = 'main/service2.html'
+    template_name = 'main/product.html'
 
     def get_context_data(self, **kwargs):
         context = super(Service2, self).get_context_data(**kwargs)
@@ -473,7 +473,7 @@ class Service2(BaseView):
 
         try:
             textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content
+            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_1'] = missing_textblock('Text block 1')
 
@@ -492,7 +492,7 @@ class Service2(BaseView):
 
         try:
             textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content
+            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_2'] = missing_textblock('Text block 2')
 
@@ -504,7 +504,7 @@ class Service2(BaseView):
 
         try:
             textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content
+            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['textblock_3'] = missing_textblock('Text block 3')
 
