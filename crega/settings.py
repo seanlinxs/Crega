@@ -133,4 +133,6 @@ with open('/etc/crega/settings.json') as s:
     # Email
     EMAIL_HOST = settings['EMAIL_HOST']
     EMAIL_PORT = settings['EMAIL_PORT']
+    EMAIL_HOST_USER = settings['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = settings['EMAIL_HOST_PASSWORD']
     ENQUIRY_EMAIL = settings['ENQUIRY_EMAIL']
