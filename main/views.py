@@ -555,6 +555,7 @@ class SingleNews(BaseView):
 
         news = get_object_or_404(News, pk=self.kwargs.get('pk'))
         context['news'] = news
+        context['content'] = news.content.replace('\n', '<br/>')
 
         return context
 
