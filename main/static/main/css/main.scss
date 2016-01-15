@@ -17,6 +17,10 @@ a:hover {
     color: #FFF;
 }
 
+a:focus {
+    outline: none;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -32,6 +36,22 @@ a:hover {
 
 .navbar-default {
     background-color: #FFFFFF;
+
+    .navbar-nav > li > a {
+	padding: 8px 8px 8px 8px;
+	color: #333;
+    }
+
+    .navbar-nav > li > a:hover {
+	color: #FFFFFF;
+	background-color: rgb(0, 115, 255);
+	border-bottom: 5px solid rgb(0, 115, 255);
+    }
+
+    .navbar-nav > li > a:focus {
+	color: rgb(0, 115, 255);
+	border-bottom: 5px solid rgb(0, 115, 255);
+    }
 }
 
 .navbar-brand {
@@ -48,21 +68,6 @@ a:hover {
     float: right;
     position: relative;
     top: 82px;
-}
-
-.nav > li > span {
-    padding: 8px 8px 8px 8px;
-}
-
-.nav > li > span:hover {
-    color: #FFFFFF;
-    background-color: rgb(0, 115, 255);
-    cursor: pointer;
-}
-
-.nav > li > span {
-    color: #rgb(0, 115, 255);
-    background-color: #FFFFFF
 }
 
 input#crega-search {
@@ -379,4 +384,27 @@ input#crega-btn-search {
 .heading {
   font-size: 32pt;
   font-weight: bold;
+}
+
+#about-us-sub {
+    /* display: none; */
+    position: fixed;
+    top: 118px;
+    z-index: 999;
+    background-color: #FFFFFF;
+    border-top: 5px solid rgb(0, 115, 255);
+    width: inherit;
+    font-size: 8pt;
+    padding: 5px;
+    box-shadow: 0px 15px 15px #333;
+}
+
+.nav-sub-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.nav-sub-heading {
+    font-weight: bold;
 }

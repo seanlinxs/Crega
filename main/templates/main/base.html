@@ -4,7 +4,7 @@
 {% load staticfiles %}
 
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,62 +20,89 @@
     {% block css %}{% endblock %}
     <title>{% block title %}{% endblock %} - Crega</title>
     {% endblock %}
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{% url 'home' %}">
-		  <img src="{% static 'main/images/logo-crega-150x56.jpg' %}" alt="Crega-Logo" />
-		</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><span>HOME</span></li>
-                    <li><span>ABOUT US</span></li>
-                    <li><span>PRODUCTS</span></li>
-		    <li><span>SERVICES</span></li>
-		    <li><span>PROJECTS</span></li>
-                    <li><span>NEWS</span></li>
-                    <li><span>ENQUIRIES</span></li>
-                    <li><span>CONTACT US</span></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'home' %}">
+	    <img src="{% static 'main/images/logo-crega-150x56.jpg' %}" alt="Crega-Logo" />
+	  </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+	    <li><a href="#">SERVICES</a></li>
+	    <li><a href="#">PROJECTS</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">ENQUIRIES</a></li>
+            <li><a href="#">CONTACT US</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+	<div id="about-us-sub" class="row">
+	  <div class="col-md-3">
+	    <p class="nav-sub-heading">ABOUT CREGA</p>
+	    <p>
+	      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla, risus auctor sagittis luctus, est erat ullamcorper dui, venenatis sagittis est eros sed lacus. Aliquam vel ornare magna, in posuere lorem. Donec nec eleifend metus. Duis quis maximus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque laoreet ante metus. Nam sed ex metus. Duis fermentum, sapien in dictum lacinia, turpis dui molestie elit, nec rhoncus ante est rhoncus magna. Sed id ligula sed nibh dapibus condimentum ut et metus. Morbi nibh est, sodales non dolor ut, faucibus feugiat ligula.
+	    </p>
+	    <p class="nav-sub-heading">OUR HISTORY</p>
+	    <p>
+	      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla, risus auctor sagittis luctus, est erat ullamcorper dui, venenatis sagittis est eros sed lacus. Aliquam vel ornare magna, in posuere lorem. Donec nec eleifend metus. Duis quis maximus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque laoreet ante metus. Nam sed ex metus. Duis fermentum, sapien in dictum lacinia, turpis dui molestie elit, nec rhoncus ante est rhoncus magna. Sed id ligula sed nibh dapibus condimentum ut et metus. Morbi nibh est, sodales non dolor ut, faucibus feugiat ligula.
+	    </p>
+	  </div>
+	  <div class="col-md-3">
+	    <p class="nav-sub-heading">MANAGEMENT BOARD</p>
+	    <p>
+	      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla, risus auctor sagittis luctus, est erat ullamcorper dui, venenatis sagittis est eros sed lacus. Aliquam vel ornare magna, in posuere lorem. Donec nec eleifend metus. Duis quis maximus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque laoreet ante metus. Nam sed ex metus. Duis fermentum, sapien in dictum lacinia, turpis dui molestie elit, nec rhoncus ante est rhoncus magna. Sed id ligula sed nibh dapibus condimentum ut et metus. Morbi nibh est, sodales non dolor ut, faucibus feugiat ligula.
+	    </p>
+	  </div>
+	  <div class="col-md-3">
+	    <p class="nav-sub-heading">REWARDS</p>
+	    <p>
+	      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla, risus auctor sagittis luctus, est erat ullamcorper dui, venenatis sagittis est eros sed lacus. Aliquam vel ornare magna, in posuere lorem. Donec nec eleifend metus. Duis quis maximus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque laoreet ante metus. Nam sed ex metus. Duis fermentum, sapien in dictum lacinia, turpis dui molestie elit, nec rhoncus ante est rhoncus magna. Sed id ligula sed nibh dapibus condimentum ut et metus. Morbi nibh est, sodales non dolor ut, faucibus feugiat ligula.
+	    </p>
+	  </div>
+	  <div class="col-md-3">
+	    <img class="nav-sub-img" src="{% static 'main/images/secondary-box1.jpg' %}" alt="nav-sub-pic" />
+	  </div>
+	</div>
+      </div><!-- /.container -->
     </nav>
 
     {% block content %}{% endblock %}
 
     <div class="footer-panel">
-        <div class="columns">
-            <div class="col-md-2">
-                <h3><a href="{% url 'enquiry' %}">ENQUIRIES</a></h3>
-            </div>
-            <div class="col-md-2">
-                <h3><a href="{% url 'contact' %}">CONTACT US</a></h3>
-            </div>
+      <div class="columns">
+        <div class="col-md-2">
+          <h3><a href="{% url 'enquiry' %}">ENQUIRIES</a></h3>
         </div>
+        <div class="col-md-2">
+          <h3><a href="{% url 'contact' %}">CONTACT US</a></h3>
+        </div>
+      </div>
     </div>
 
     <div id="footer">
-        <ul>
-            <li><a href="{% url 'privacy' %}">PRIVACY</a></li>
-            <li><a href="{% url 'terms' %}">TERMS OF USE</a></li>
-            <li>&copy; {% now "Y" %} - CREGA</li>
-            <li>ABN: 12 345 67</li>
-        </ul>
+      <ul>
+        <li><a href="{% url 'privacy' %}">PRIVACY</a></li>
+        <li><a href="{% url 'terms' %}">TERMS OF USE</a></li>
+        <li>&copy; {% now "Y" %} - CREGA</li>
+        <li>ABN: 12 345 67</li>
+      </ul>
     </div>
 
     <script type="text/javascript" src="{% static 'main/js/jquery-2.1.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'main/js/bootstrap.min.js' %}"></script>    
     {% block script %}{% endblock %}
-</body>
+  </body>
 </html>
