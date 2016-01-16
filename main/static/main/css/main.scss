@@ -37,19 +37,27 @@ a:focus {
 .navbar-default {
     background-color: #FFFFFF;
 
-    .navbar-nav > li > a {
+    .navbar-nav > li > div {
 	padding: 8px 8px 8px 8px;
 	color: #333;
+	cursor: pointer;
     }
 
-    .navbar-nav > li > a:hover {
+    .navbar-nav > li > div:hover {
 	color: #FFFFFF;
 	background-color: rgb(0, 115, 255);
 	border-bottom: 5px solid rgb(0, 115, 255);
     }
 
-    .navbar-nav > li > a:focus {
+    .navbar-nav > li > div.active {
 	color: rgb(0, 115, 255);
+	background-color: #FFFFFF;
+	border-bottom: 5px solid rgb(0, 115, 255);
+    }
+
+    .navbar-nav > li > div.active:hover {
+	color: #FFFFFF;
+	background-color: rgb(0, 115, 255);
 	border-bottom: 5px solid rgb(0, 115, 255);
     }
 }
@@ -386,8 +394,22 @@ input#crega-btn-search {
   font-weight: bold;
 }
 
-#about-us-sub {
-    /* display: none; */
+.nav-sub-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.nav-sub-heading {
+    font-weight: bold;
+}
+
+.small-icon {
+    font-size: 0.8em;
+}
+
+.sub-menu {
+    display: none;
     position: fixed;
     top: 118px;
     z-index: 999;
@@ -397,14 +419,8 @@ input#crega-btn-search {
     font-size: 8pt;
     padding: 5px;
     box-shadow: 0px 15px 15px #333;
-}
 
-.nav-sub-img {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-}
-
-.nav-sub-heading {
-    font-weight: bold;
+    a {
+	color: rgb(0, 115, 255);
+    }
 }
