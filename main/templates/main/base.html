@@ -39,7 +39,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><div>HOME</div></li>
+            <li><div id="home-link"><span class="glyphicon glyphicon-home"></span></div></li>
             <li><div id="about-us-link" class="{{ about_styleclass }}">ABOUT US <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
             <li><div id="products-link" class="{{ product_styleclass }}">PRODUCTS <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
 	    <li><div id="services-link" class="{{ service_styleclass }}">SERVICES <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
@@ -109,6 +109,8 @@
         $("#projects-sub").mouseover(function() { showSub("projects-sub"); });
         $("#projects-link").mouseout(function() { hideSub("projects-sub"); });
         $("#projects-sub").mouseout(function() { hideSub("projects-sub"); });
+
+        $("#home-link").click(function() { window.location="/"; });
       });
     </script>
     {% block script %}{% endblock %}

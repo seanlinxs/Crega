@@ -43,7 +43,17 @@ a:focus {
 	cursor: pointer;
     }
 
+    .navbar-nav > li > div#home-link {
+	color: rgb(0, 115, 255);
+    }
+
     .navbar-nav > li > div:hover {
+	color: #FFFFFF;
+	background-color: rgb(0, 115, 255);
+	border-bottom: 5px solid rgb(0, 115, 255);
+    }
+
+    .navbar-nav > li > div#home-link:hover {
 	color: #FFFFFF;
 	background-color: rgb(0, 115, 255);
 	border-bottom: 5px solid rgb(0, 115, 255);
