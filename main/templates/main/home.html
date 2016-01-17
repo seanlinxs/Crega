@@ -12,70 +12,70 @@
 {% block content %}
 
 <div class="primary-container">
-    <div class="primary-box">
-        <div class="primary-box-bgimage">
-            <img src="{{ media_url }}/{{ primary_box_image_1 }}" alt="{{ primary_box_image_1 }}">
-            <img src="{{ media_url }}/{{ primary_box_image_2 }}" alt="{{ primary_box_image_2 }}">
-            <img src="{{ media_url }}/{{ primary_box_image_3 }}" alt="{{ primary_box_image_3 }}">
-            <img src="{{ media_url }}/{{ primary_box_image_4 }}" alt="{{ primary_box_image_4 }}">
-        </div>
-        <div class="primary-box-heading">
-            <p class="heading">CREGA</p>
-            <p>{{ primary_box_text }}</p>
-        </div>
+  <div class="primary-box">
+    <div class="primary-box-bgimage">
+      <img src="{{ media_url }}/{{ primary_box_image_1 }}" alt="{{ primary_box_image_1 }}">
+      <img src="{{ media_url }}/{{ primary_box_image_2 }}" alt="{{ primary_box_image_2 }}">
+      <img src="{{ media_url }}/{{ primary_box_image_3 }}" alt="{{ primary_box_image_3 }}">
+      <img src="{{ media_url }}/{{ primary_box_image_4 }}" alt="{{ primary_box_image_4 }}">
     </div>
+    <div class="primary-box-heading">
+      <p class="heading">CREGA</p>
+      <p>{{ primary_box_text }}</p>
+    </div>
+  </div>
 </div>
 
 <div class="container">
-    <div class="secondary-boxes">
-        <ul>
-            <li>
-                <div class="secondary-box">
-                    <div class="secondary-box-bgimage">
-                        <img src="{{ media_url }}/{{ secondary_box_image_1 }}" alt="{{ secondary_box_image_1 }}">
-                    </div>
-                    <div class="secondary-box-heading">
-                        <a href="{% url 'about' %}">{{ secondary_box_text_1 }}</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="secondary-box">
-                    <div class="secondary-box-bgimage">
-                        <img src="{{ media_url }}/{{ secondary_box_image_2 }}" alt="{{ secondary_box_image_2 }}">
-                    </div>
-                    <div class="secondary-box-heading">
-                        <a href="{% url 'product' name='Product1' %}">{{ secondary_box_text_2 }}</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="secondary-box">
-                    <div class="secondary-box-bgimage">
-                        <img src="{{ media_url }}/{{ secondary_box_image_3 }}" alt="{{ secondary_box_image_3 }}">
-                    </div>
-                    <div class="secondary-box-heading">
-                        <a href="{% url 'news' %}">{{ secondary_box_text_3 }}</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+  <div class="secondary-boxes">
+    <ul>
+      <li>
+        <div class="secondary-box">
+          <div class="secondary-box-bgimage">
+            <img src="{{ media_url }}/{{ secondary_box_image_1 }}" alt="{{ secondary_box_image_1 }}">
+          </div>
+          <div class="secondary-box-heading">
+            <a href="{% url 'about' %}">{{ secondary_box_text_1 }}</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="secondary-box">
+          <div class="secondary-box-bgimage">
+            <img src="{{ media_url }}/{{ secondary_box_image_2 }}" alt="{{ secondary_box_image_2 }}">
+          </div>
+          <div class="secondary-box-heading">
+            <a href="{% url 'product' name='Product1' %}">{{ secondary_box_text_2 }}</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="secondary-box">
+          <div class="secondary-box-bgimage">
+            <img src="{{ media_url }}/{{ secondary_box_image_3 }}" alt="{{ secondary_box_image_3 }}">
+          </div>
+          <div class="secondary-box-heading">
+            <a href="{% url 'news' %}">{{ secondary_box_text_3 }}</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <!--
-    <div class="row news">
+  <!--
+      <div class="row news">
         <ul>
-        {% for n in news %}
-            <li>
-                <div class="news-picture" style="background: url({{ media_url }}/{{ n.image }}) no-repeat"></div>
-                <div class="news-content">
-                    <a href="#">{{ n.title }}</a>
-                </div>
-            </li>
-        {% endfor %}
+          {% for n in news %}
+          <li>
+            <div class="news-picture" style="background: url({{ media_url }}/{{ n.image }}) no-repeat"></div>
+            <div class="news-content">
+              <a href="#">{{ n.title }}</a>
+            </div>
+          </li>
+          {% endfor %}
         </ul>
-    </div>
-    -->
+      </div>
+      -->
 </div>
 
 {% endblock %}
@@ -83,8 +83,8 @@
 {% block script %}
 <script type="text/javascript" src="{% static 'main/js/slick.min.js' %}"></script>    
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.primary-box-bgimage').slick({dots: true, speed: 500, autoplay: true});
-    });
+  $(document).ready(function() {
+  $('.primary-box-bgimage').slick({dots: false, autoplaySpeed: 10000, autoplay: true, speed: 0, fade: true});
+  });
 </script>
 {% endblock %}

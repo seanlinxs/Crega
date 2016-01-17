@@ -82,35 +82,35 @@
     <script type="text/javascript" src="{% static 'main/js/bootstrap.min.js' %}"></script>
     <script type="text/javascript">
       function showSub(subName) {
-        $("#" + subName).show();
+      $("#" + subName).show();
       };
 
       function hideSub(subName) {
-        $("#" + subName).hide();
+      $("#" + subName).hide();
       };
 
       $(document).ready(function () {
-        $("#about-us-link").mouseover(function() { showSub("about-us-sub"); });
-        $("#about-us-sub").mouseover(function() { showSub("about-us-sub"); });
-        $("#about-us-link").mouseout(function() { hideSub("about-us-sub"); });
-        $("#about-us-sub").mouseout(function() { hideSub("about-us-sub"); });
+      $("#about-us-link").mouseover(function() { showSub("about-us-sub"); });
+      $("#about-us-sub").mouseover(function() { showSub("about-us-sub"); });
+      $("#about-us-link").mouseout(function() { hideSub("about-us-sub"); });
+      $("#about-us-sub").mouseout(function() { hideSub("about-us-sub"); });
 
-        $("#products-link").mouseover(function() { showSub("products-sub"); });
-        $("#products-sub").mouseover(function() { showSub("products-sub"); });
-        $("#products-link").mouseout(function() { hideSub("products-sub"); });
-        $("#products-sub").mouseout(function() { hideSub("products-sub"); });
+      $("#products-link").mouseover(function() { showSub("products-sub"); });
+      $("#products-sub").mouseover(function() { showSub("products-sub"); });
+      $("#products-link").mouseout(function() { hideSub("products-sub"); });
+      $("#products-sub").mouseout(function() { hideSub("products-sub"); });
 
-        $("#services-link").mouseover(function() { showSub("services-sub"); });
-        $("#services-sub").mouseover(function() { showSub("services-sub"); });
-        $("#services-link").mouseout(function() { hideSub("services-sub"); });
-        $("#services-sub").mouseout(function() { hideSub("services-sub"); });
+      $("#services-link").mouseover(function() { showSub("services-sub"); });
+      $("#services-sub").mouseover(function() { showSub("services-sub"); });
+      $("#services-link").mouseout(function() { hideSub("services-sub"); });
+      $("#services-sub").mouseout(function() { hideSub("services-sub"); });
 
-        $("#projects-link").mouseover(function() { showSub("projects-sub"); });
-        $("#projects-sub").mouseover(function() { showSub("projects-sub"); });
-        $("#projects-link").mouseout(function() { hideSub("projects-sub"); });
-        $("#projects-sub").mouseout(function() { hideSub("projects-sub"); });
+      $("#projects-link").mouseover(function() { showSub("projects-sub"); });
+      $("#projects-sub").mouseover(function() { showSub("projects-sub"); });
+      $("#projects-link").mouseout(function() { hideSub("projects-sub"); });
+      $("#projects-sub").mouseout(function() { hideSub("projects-sub"); });
 
-        $("#home-link").click(function() { window.location="/"; });
+      $("#home-link").click(function() { window.location="/"; });
       });
     </script>
     {% block script %}{% endblock %}

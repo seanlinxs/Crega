@@ -36,6 +36,7 @@ a:focus {
 
 .navbar-default {
     background-color: #FFFFFF;
+    border: 0 solid #FFFFFF;
 
     .navbar-nav > li > div {
 	padding: 8px 8px 8px 8px;
@@ -206,11 +207,14 @@ input#crega-btn-search {
 }
 
 .primary-container {
-    width: 100%;
+    width: 1200px;
+    height: 420px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .primary-box {
-    height: 360px;
+    height: 420px;
     margin: 0 auto;
 }
 
@@ -224,12 +228,38 @@ input#crega-btn-search {
     color: #FFF;
 }
 
+@-webkit-keyframes zoom {
+    from {
+	-webkit-transform: scale(1, 1);
+    }
+    to {
+	-webkit-transform: scale(4, 4);
+    }
+}
+
+@keyframes zoom {
+    from {
+	transform: scale(1, 1);
+    }
+    to {
+	transform: scale(4, 4);
+    }
+}
+
 .primary-box-bgimage {
     img {
         z-index: -99;
         width: 100%;
-        height: 288px;
+        height: 420px;
     }
+    overflow: hidden;
+}
+
+.slick-current {
+    -webkit-animation: zoom 50s;
+    animation: zoom 50s;
+    -webkit-animation-delay: 500ms;
+    animation-delay: 500ms;
 }
 
 .secondary-boxes {
