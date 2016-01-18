@@ -5,40 +5,40 @@
 {% block content %}
 
 <div class="container">
-    <div class="row section">
-        <div class="col-md-12">
-            <p class="text-justify">{{ textblock_1|safe }}</p>
-        </div>
+  <div class="row section">
+    <div class="col-md-12">
+      <p class="text-justify">{{ textblock_1|safe }}</p>
     </div>
-    <div class="row section">
-        <div class="col-md-12 video-container">
-            {% if missing_videolink_1 %}
-            <p>{{ videolink_1 }}</p>
-            {% else %}
-            <iframe width="640" height="360" src="{{ videolink_1 }}" frameborder="0" allowfullscreen></iframe>
-            {% endif %}
-        </div>
+  </div>
+  <div class="row section">
+    <div class="col-md-12 video-container">
+      {% if missing_videolink_1 %}
+      <p>{{ videolink_1 }}</p>
+      {% else %}
+      <iframe width="640" height="360" src="{{ videolink_1 }}" frameborder="0" allowfullscreen></iframe>
+      {% endif %}
     </div>
-    <div class="row section">
-        <div class="col-md-5">
-            <div class="image-container">
-                <img src="{{ media_url }}/{{ pageimage_1 }}" alt="{{ pageimage_1 }}" />
-            </div>
-        </div>
-        <div class="col-md-7">
-            <p class="text-justify">{{ textblock_2|safe }}</p>
-        </div>
+  </div>
+  <div class="row section">
+    <div class="col-md-5">
+      <div class="image-container">
+        <img src="{{ media_url }}/{{ pageimage_1 }}" alt="{{ pageimage_1 }}" />
+      </div>
     </div>
-    <div class="row section">
-        <div class="col-md-5">
-            <div class="image-container">
-                <img src="{{ media_url }}/{{ pageimage_2 }}" alt="{{ pageimage_2 }}" />
-            </div>
-        </div>
-        <div class="col-md-7">
-            <p class="text-justify">{{ textblock_3|safe }}</p>
-        </div>
+    <div class="col-md-7">
+      <p class="text-justify">{{ textblock_2|safe }}</p>
     </div>
+  </div>
+  <div class="row section">
+    <div class="col-md-5">
+      <div class="image-container">
+        <img src="{{ media_url }}/{{ pageimage_2 }}" alt="{{ pageimage_2 }}" />
+      </div>
+    </div>
+    <div class="col-md-7">
+      <p class="text-justify">{{ textblock_3|safe }}</p>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

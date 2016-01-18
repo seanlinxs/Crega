@@ -6,90 +6,93 @@
 
 <div class="container">
 
-    <h3>Send us your questions and enquiries by filling the following form to enable us to response ASAP.</h3>
+  <h2>Send us your questions and enquiries by filling the following form to enable us to response ASAP.</h2>
 
-    <form method="post" id="enquiry-form">
-        {{ form.non_field_errors }}
-        <div class="row form-group">
-            <div class="col-md-3">
-                <label>First name</label>
-            </div>
-            <div class="col-md-7">
-                <input type="text" name="firstname" placeholder="First name" />
-            </div>
-            <div class="col-md-2">
-                {{ form.firstname.errors }}
-            </div>
-        </div>
+  <hr />
 
-        <div class="row form-group">
-            <div class="col-md-3">
-                <label>Last name</label>
-            </div>
-            <div class="col-md-7">
-                <input type="text" name="lastname" placeholder="Last name" />
-            </div>
-            <div class="col-md-2">
-                {{ form.lastname.errors }}
-            </div>
-        </div>
 
-        <div class="row form-group">
-            <div class="col-md-3">
-                <label>Email <span class="required">*</span></label>
-            </div>
-            <div class="col-md-7">
-                <input type="text" name="email" placeholder="Email" required />
-            </div>
-            <div class="col-md-2">
-                {{ form.email.errors }}
-            </div>
-        </div>
+  <form method="post" id="enquiry-form">
+    {{ form.non_field_errors }}
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>First name</label>
+      </div>
+      <div class="col-md-7">
+        <input type="text" name="firstname" placeholder="First name" />
+      </div>
+      <div class="col-md-2">
+        {{ form.firstname.errors }}
+      </div>
+    </div>
 
-        <div class="row form-group">
-            <div class="col-md-3">
-                <label>Company</label>
-            </div>
-            <div class="col-md-7">
-                <input type="text" name="company" placeholder="Company" />
-            </div>
-            <div class="col-md-2">
-                {{ form.company.errors }}
-            </div>
-        </div>
-        
-        <div class="row form-group">
-            <div class="col-md-3">
-                <label>Phone</label>
-            </div>
-            <div class="col-md-7">
-                <input type="text" name="phone" placeholder="Phone" />
-            </div>
-            <div class="col-md-2">
-                {{ form.phone.errors }}
-            </div>
-        </div>
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Last name</label>
+      </div>
+      <div class="col-md-7">
+        <input type="text" name="lastname" placeholder="Last name" />
+      </div>
+      <div class="col-md-2">
+        {{ form.lastname.errors }}
+      </div>
+    </div>
 
-        <div class="row form-group">
-            <div class="col-md-3">
-                <label>Message</label>
-            </div>
-            <div class="col-md-7">
-                <textarea name="message" rows="10" placeholder="Message"></textarea>
-            </div>
-            <div class="col-md-2">
-                {{ form.message.errors }}
-            </div>
-        </div>
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Email <span class="required">*</span></label>
+      </div>
+      <div class="col-md-7">
+        <input type="text" name="email" placeholder="Email" required />
+      </div>
+      <div class="col-md-2">
+        {{ form.email.errors }}
+      </div>
+    </div>
 
-        <div class="row form-group">
-            <div class="col-md-3">
-                <button type="submit" name="Submit">
-                    <span>Submit</span>
-                </button>
-            </div>
-        </div>
-    </form>
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Company</label>
+      </div>
+      <div class="col-md-7">
+        <input type="text" name="company" placeholder="Company" />
+      </div>
+      <div class="col-md-2">
+        {{ form.company.errors }}
+      </div>
+    </div>
+    
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Phone</label>
+      </div>
+      <div class="col-md-7">
+        <input type="text" name="phone" placeholder="Phone" />
+      </div>
+      <div class="col-md-2">
+        {{ form.phone.errors }}
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Message</label>
+      </div>
+      <div class="col-md-7">
+        <textarea name="message" rows="10" placeholder="Message"></textarea>
+      </div>
+      <div class="col-md-2">
+        {{ form.message.errors }}
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col-md-3">
+        <button type="submit" name="Submit">
+          <span>Submit</span>
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
 
 {% endblock %}

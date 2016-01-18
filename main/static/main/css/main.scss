@@ -147,7 +147,7 @@ input#crega-btn-search {
     h3 {
         font-size: 1em;
         color: #FCB712;
-        font-weight: bold;
+        font-weight: 400;
 
         a {
           color: #FCB712;
@@ -445,7 +445,7 @@ input#crega-btn-search {
 }
 
 .nav-sub-heading {
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .small-icon {
@@ -473,4 +473,8 @@ input#crega-btn-search {
     font-size: 1.4em;
     padding: 20px 0 5px 0;
     border-bottom: 1px solid #DDD;
+}
+
+label {
+    font-weight: 400;
 }
