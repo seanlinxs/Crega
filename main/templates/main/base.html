@@ -46,8 +46,8 @@
 	    <li><div id="services-link" class="{{ service_styleclass }}">SERVICES <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
 	    <li><div id="projects-link" class="{{ project_styleclass }}">PROJECTS <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
             <li><div id="news-link" class="{{ news_styleclass }}">NEWS</div></li>
-            <li><div>ENQUIRIES</div></li>
-            <li><div>CONTACT US</div></li>
+            <li><div id="enquiry-link" class="{{ enquiry_styleclass }}">ENQUIRIES</div></li>
+            <li><div id="contact-us-link" class="{{ contact_styleclass }}">CONTACT US</div></li>
           </ul>
         </div><!-- /.navbar-collapse -->
 	{% include "main/about-us-sub.html" %}
@@ -112,6 +112,9 @@
       $("#projects-sub").mouseout(function() { hideSub("projects-sub"); });
 
       $("#home-link").click(function() { window.location="/"; });
+      $("#news-link").click(function() { window.location="{% url 'news' %}" })
+      $("#enquiry-link").click(function() { window.location="{% url 'enquiry' %}" })
+      $("#contact-us-link").click(function() { window.location="{% url 'contact' %}" })
       });
     </script>
     {% block script %}{% endblock %}

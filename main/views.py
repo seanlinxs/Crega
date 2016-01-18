@@ -356,6 +356,12 @@ class Enquiry(FormView):
     template_name = 'main/enquiry.html'
     form_class = EnquiryForm
 
+    def get_context_data(self, **kwargs):
+        context = super(Enquiry, self).get_context_data(**kwargs)
+        context['enquiry_styleclass'] = "active"
+
+        return context
+
     def form_valid(self, form):
         form.send_email()
         success_url = '{0}?{1}'.format(reverse('thanks'), urlencode({'firstname': form.cleaned_data['firstname'], 'lastname': form.cleaned_data['lastname']}))
@@ -366,6 +372,12 @@ class Enquiry(FormView):
 class Contact(BaseView):
     template_name = 'main/contact.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(Contact, self).get_context_data(**kwargs)
+        context['contact_styleclass'] = "active"
+
+        return context
+    
 
 class Privacy(BaseView):
     template_name = 'main/privacy.html'
@@ -380,6 +392,7 @@ class AllNews(BaseView):
 
     def get_context_data(self, **kwargs):
         context = super(AllNews, self).get_context_data(**kwargs)
+        context['news_styleclass'] = "active"
 
         site = get_object_or_404(Website, name='crega.com.au')
         news = site.news_set.all()
@@ -393,6 +406,7 @@ class SingleNews(BaseView):
 
     def get_context_data(self, **kwargs):
         context = super(SingleNews, self).get_context_data(**kwargs)
+        cntext['news_styleclass'] = "active"
 
         news = get_object_or_404(News, pk=self.kwargs.get('pk'))
         context['news'] = news
