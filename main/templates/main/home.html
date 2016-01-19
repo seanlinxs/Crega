@@ -31,7 +31,6 @@
     <p class="text-justify">
       China Railway Engineering Equipment (Australia) Pty Ltd (CREGA) has been established in Australia pursuant to a Cooperation Partnership Agreement with China Railway Engineering Equipment Croup (CREG) which is a subsidiary company of the pubic listed China Railway Engineering Corporation (CREC), a Fortune 500 and Brand 500 Company and a key state-owned company under Chinese Central Government.
     </p>
-    <hr />
   </div>
   <div class="secondary-boxes">
     <ul>
@@ -41,7 +40,10 @@
             <img src="{{ media_url }}/{{ secondary_box_image_1 }}" alt="{{ secondary_box_image_1 }}">
           </div>
           <div class="secondary-box-heading">
-            <a href="{% url 'about' %}">{{ secondary_box_text_1 }}</a>
+            PRODUCTS
+          </div>
+          <div class="secondary-box-footer">
+            <a href="{% url 'product' name='Product 1' %}">MORE</a>
           </div>
         </div>
       </li>
@@ -51,7 +53,10 @@
             <img src="{{ media_url }}/{{ secondary_box_image_2 }}" alt="{{ secondary_box_image_2 }}">
           </div>
           <div class="secondary-box-heading">
-            <a href="{% url 'product' name='Product1' %}">{{ secondary_box_text_2 }}</a>
+            SERVICES
+          </div>
+          <div class="secondary-box-footer">
+            <a href="{% url 'service' name='Service 1' %}">MORE</a>
           </div>
         </div>
       </li>
@@ -61,7 +66,23 @@
             <img src="{{ media_url }}/{{ secondary_box_image_3 }}" alt="{{ secondary_box_image_3 }}">
           </div>
           <div class="secondary-box-heading">
-            <a href="{% url 'news' %}">{{ secondary_box_text_3 }}</a>
+            PROJECTS
+          </div>
+          <div class="secondary-box-footer">
+            <a href="{% url 'project' name='Project 1' %}">MORE</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="secondary-box">
+          <div class="secondary-box-bgimage">
+            <img src="{{ media_url }}/{{ secondary_box_image_3 }}" alt="{{ secondary_box_image_3 }}">
+          </div>
+          <div class="secondary-box-heading">
+            NEWS
+          </div>
+          <div class="secondary-box-footer">
+            <a href="{% url 'news' %}">MORE</a>
           </div>
         </div>
       </li>
