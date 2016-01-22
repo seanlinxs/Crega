@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/firasans-light-webfont.eot');
+    src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-light-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-light-webfont.woff') format('woff'),
+         url('../fonts/firasans-light-webfont.ttf') format('truetype'),
+         url('../fonts/firasans-light-webfont.svg#fira_sanslight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/firasans-lightitalic-webfont.eot');
+    src: url('../fonts/firasans-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-lightitalic-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-lightitalic-webfont.woff') format('woff'),
+         url('../fonts/firasans-lightitalic-webfont.ttf') format('truetype'),
+         url('../fonts/firasans-lightitalic-webfont.svg#fira_sanslight_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/firasans-regular-webfont.eot');
+    src: url('../fonts/firasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-regular-webfont.woff') format('woff'),
+         url('../fonts/firasans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/firasans-regular-webfont.svg#fira_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/firasans-italic-webfont.eot');
+    src: url('../fonts/firasans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-italic-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-italic-webfont.woff') format('woff'),
+         url('../fonts/firasans-italic-webfont.ttf') format('truetype'),
+         url('../fonts/firasans-italic-webfont.svg#fira_sansitalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/firasans-medium-webfont.eot');
+    src: url('../fonts/firasans-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-medium-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-medium-webfont.woff') format('woff'),
+         url('../fonts/firasans-medium-webfont.ttf') format('truetype'),
+         url('../fonts/firasans-medium-webfont.svg#fira_sansmedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/firasans-mediumitalic-webfont.eot');
+    src: url('../fonts/firasans-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-mediumitalic-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-mediumitalic-webfont.woff') format('woff'),
+         url('../fonts/firasans-mediumitalic-webfont.ttf') format('truetype'),
+         url('../fonts/firasans-mediumitalic-webfont.svg#fira_sansmedium_italic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/firasans-semibold-webfont.eot');
+    src: url('../fonts/firasans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-semibold-webfont.woff') format('woff'),
+         url('../fonts/firasans-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/firasans-semibold-webfont.svg#fira_sanssemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/firasans-semibolditalic-webfont.eot');
+    src: url('../fonts/firasans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/firasans-semibolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-semibolditalic-webfont.woff') format('woff'),
+         url('../fonts/firasans-semibolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/firasans-semibolditalic-webfont.svg#fira_sanssemibold_italic') format('svg');
+    font-weight: 600;
+    font-style: italic;
+
+}
