@@ -127,8 +127,8 @@ class About(BaseView):
 
     def get_context_data(self, **kwargs):
         context = super(About, self).get_context_data(**kwargs)
-        context['about_us_link_style'] = 'active'
         context['about_styleclass'] = 'active'
+        context['breadcrumb'] = 'ABOUT US'
 
         site = get_object_or_404(Website, name='crega.com.au')
 
@@ -185,6 +185,7 @@ class Product(BaseView):
         product_name = self.kwargs.get('name')
         context = super(Product, self).get_context_data(**kwargs)
         context['product_styleclass'] = 'active'
+        context['breadcrumb'] = product_name.upper()
 
         site = get_object_or_404(Website, name='crega.com.au')
 
@@ -243,6 +244,7 @@ class Service(BaseView):
         service_name = self.kwargs.get('name')
         context = super(Service, self).get_context_data(**kwargs)
         context['service_styleclass'] = 'active'
+        context['breadcrumb'] = service_name.upper()
 
         site = get_object_or_404(Website, name='crega.com.au')
 
@@ -301,6 +303,7 @@ class Project(BaseView):
         project_name = self.kwargs.get('name')
         context = super(Project, self).get_context_data(**kwargs)
         context['project_styleclass'] = 'active'
+        context['breadcrumb'] = project_name.upper()
 
         site = get_object_or_404(Website, name='crega.com.au')
 
@@ -359,6 +362,7 @@ class Enquiry(FormView):
     def get_context_data(self, **kwargs):
         context = super(Enquiry, self).get_context_data(**kwargs)
         context['enquiry_styleclass'] = "active"
+        context['breadcrumb'] = "ENQUIRIES"
 
         return context
 
@@ -375,6 +379,7 @@ class Contact(BaseView):
     def get_context_data(self, **kwargs):
         context = super(Contact, self).get_context_data(**kwargs)
         context['contact_styleclass'] = "active"
+        context['breadcrumb'] = "CONTACT US"
 
         return context
     
@@ -382,9 +387,23 @@ class Contact(BaseView):
 class Privacy(BaseView):
     template_name = 'main/privacy.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(Privacy, self).get_context_data(**kwargs)
+        context['breadcrumb'] = "PRIVACY"
+
+        return context
+
+
 
 class Terms(BaseView):
     template_name = 'main/terms.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Terms, self).get_context_data(**kwargs)
+        context['breadcrumb'] = "TERMS OF USE"
+
+        return context
+
 
 
 class AllNews(BaseView):
@@ -393,6 +412,7 @@ class AllNews(BaseView):
     def get_context_data(self, **kwargs):
         context = super(AllNews, self).get_context_data(**kwargs)
         context['news_styleclass'] = "active"
+        context['breadcrumb'] = "NEWS"
 
         site = get_object_or_404(Website, name='crega.com.au')
         news = site.news_set.all()
@@ -407,6 +427,7 @@ class SingleNews(BaseView):
     def get_context_data(self, **kwargs):
         context = super(SingleNews, self).get_context_data(**kwargs)
         context['news_styleclass'] = "active"
+        context['breadcrumb'] = "NEWS"
 
         news = get_object_or_404(News, pk=self.kwargs.get('pk'))
         context['news'] = news
@@ -422,5 +443,6 @@ class Thanks(BaseView):
         context = super(Thanks, self).get_context_data(**kwargs)
         context['firstname'] = self.request.GET.get('firstname')
         context['lastname'] = self.request.GET.get('lastname')
+        context['breadcrumb'] = "ENQUIRIES"
 
         return context

@@ -1,8 +1,7 @@
 body {
     font-family: "Fira Sans";
     font-weight: 300;
-    padding-top: 128px;
-    padding-bottom: 20px;
+    padding-top: 88px;
 }
 
 
@@ -38,7 +37,8 @@ a:focus {
 
 .navbar-default {
     background-color: #FFFFFF;
-    border: 0 solid #FFFFFF;
+    border-bottom: 1px solid #DDD;
+    min-height: 88px;
 
     .navbar-nav > li > div {
 	padding: 8px 8px 8px 8px;
@@ -75,20 +75,10 @@ a:focus {
     }
 }
 
-.navbar-brand {
-    height: 128px;
-
-    img {
-	position: relative;
-	top: 49px;
-	margin-top: -28px;
-    }
-}
-
 .navbar-nav {
     float: right;
     position: relative;
-    top: 82px;
+    top: 36px;
 }
 
 input#crega-search {
@@ -476,7 +466,7 @@ input#crega-btn-search {
 .sub-menu {
     display: none;
     position: fixed;
-    top: 118px;
+    top: 72px;
     z-index: 999;
     background-color: #FFFFFF;
     border-top: 5px solid rgb(0, 115, 255);
@@ -501,4 +491,11 @@ label {
 
 #footer-logo {
     float: left;
+}
+
+#breadcrumb {
+    font-size: 2.8em;
+    color: #FFF;
+    padding: 20px;
+    background-color: rgb(0, 115, 255)
 }

@@ -57,6 +57,12 @@
       </div><!-- /.container -->
     </nav>
 
+    {% if breadcrumb != None %}
+    <div id="breadcrumb">
+      <div class="container">{{ breadcrumb }}</div>
+    </div>
+    {% endif %}
+
     {% block content %}{% endblock %}
 
     <div class="footer-panel">
