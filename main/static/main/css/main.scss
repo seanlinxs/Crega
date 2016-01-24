@@ -201,9 +201,14 @@ input#crega-btn-search {
 
         li {
             float: left;
-            padding: 0 10px 16px 14px;
+            /* padding: 0 10px 16px 14px; */
             overflow: inherit;
             white-space: nowrap;
+
+	    a, span {
+		padding: 0 8px 0 8px;
+		border-right: 1px solid #FFF;
+	    }
         }
     }
 }
