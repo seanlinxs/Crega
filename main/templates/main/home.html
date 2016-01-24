@@ -92,10 +92,10 @@
 {% endblock %}
 
 {% block script %}
-<script type="text/javascript" src="{% static 'main/js/slick.min.js' %}"></script>    
+<script type="text/javascript" src="{% static 'main/js/slick.min.js' %}"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-  $('.primary-box-bgimage').slick({dots: false, autoplaySpeed: 10000, autoplay: true, speed: 0, fade: true});
+  $('.primary-box-bgimage').slick({arrows: true, dots: false, autoplaySpeed: 5000, autoplay: true, speed: 500, fade: true});
   });
 </script>
 {% endblock %}
