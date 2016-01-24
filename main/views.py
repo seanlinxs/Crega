@@ -406,7 +406,7 @@ class SingleNews(BaseView):
 
     def get_context_data(self, **kwargs):
         context = super(SingleNews, self).get_context_data(**kwargs)
-        cntext['news_styleclass'] = "active"
+        context['news_styleclass'] = "active"
 
         news = get_object_or_404(News, pk=self.kwargs.get('pk'))
         context['news'] = news
