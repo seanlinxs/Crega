@@ -125,7 +125,6 @@ input#crega-btn-search {
 }
 
 .footer-panel {
-    border-top: 1px solid #666;
     clear: both;
     width: 100%;
     float: left;
@@ -182,7 +181,7 @@ input#crega-btn-search {
     border-top: 1px solid rgb(0, 115, 255);
     border-bottom: 1px solid #404040;
     clear: both;
-    color: #CCC;
+    color: #FFF;
     height: auto;
     margin: 0;
     padding-top: 15px;
@@ -207,6 +206,9 @@ input#crega-btn-search {
 
 	    a, span {
 		padding: 0 8px 0 8px;
+	    }
+
+	    a {
 		border-right: 1px solid #FFF;
 	    }
         }
