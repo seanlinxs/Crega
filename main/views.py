@@ -53,7 +53,7 @@ class Home(BaseView):
 
         try:
             primary_box_text = textblocks.get(name='Primary box text')
-            context['primary_box_text'] = primary_box_text.content
+            context['primary_box_text'] = primary_box_text.content.replace('\n', '<br/>')
         except TextBlock.DoesNotExist:
             context['primary_box_text'] = missing_textblock('Primary box text')
 
