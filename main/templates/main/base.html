@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><div id="home-link"><span class="glyphicon glyphicon-home"></span></div></li>
-            <li><div id="about-us-link" class="{{ about_styleclass }}">ABOUT US <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
+            <li><div id="about-us-link" class="{{ about_styleclass }}">ABOUT US</div></li>
             <li><div id="products-link" class="{{ product_styleclass }}">PRODUCTS <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
 	    <li><div id="services-link" class="{{ service_styleclass }}">SERVICES <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
 	    <li><div id="projects-link" class="{{ project_styleclass }}">PROJECTS <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
@@ -50,7 +50,6 @@
             <li><div id="contact-us-link" class="{{ contact_styleclass }}">CONTACT US</div></li>
           </ul>
         </div><!-- /.navbar-collapse -->
-	{% include "main/about-us-sub.html" %}
 	{% include "main/products-sub.html" %}
 	{% include "main/services-sub.html" %}
 	{% include "main/projects-sub.html" %}
@@ -100,11 +99,6 @@
       };
 
       $(document).ready(function () {
-      $("#about-us-link").mouseover(function() { showSub("about-us-sub"); });
-      $("#about-us-sub").mouseover(function() { showSub("about-us-sub"); });
-      $("#about-us-link").mouseout(function() { hideSub("about-us-sub"); });
-      $("#about-us-sub").mouseout(function() { hideSub("about-us-sub"); });
-
       $("#products-link").mouseover(function() { showSub("products-sub"); });
       $("#products-sub").mouseover(function() { showSub("products-sub"); });
       $("#products-link").mouseout(function() { hideSub("products-sub"); });
@@ -121,6 +115,7 @@
       $("#projects-sub").mouseout(function() { hideSub("projects-sub"); });
 
       $("#home-link").click(function() { window.location="/"; });
+      $("#about-us-link").click(function() { window.location="{% url 'about' %}"; });
       $("#news-link").click(function() { window.location="{% url 'news' %}" })
       $("#enquiry-link").click(function() { window.location="{% url 'enquiry' %}" })
       $("#contact-us-link").click(function() { window.location="{% url 'contact' %}" })
