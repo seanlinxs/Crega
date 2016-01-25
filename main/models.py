@@ -80,6 +80,11 @@ class News(models.Model):
     content = models.TextField()
     image = models.FileField(upload_to='newsimages/%Y/%m/%d')
     site = models.ForeignKey(Website)
+    NEWS_SOURCES = (
+        ('INLINE', 'Inline Text'),
+        ('REFERENCE', 'External Link')
+    )
+    source = models.CharField(max_length=20, choices=NEWS_SOURCES, default='INLINE')
 
 
     class Meta:
@@ -87,4 +92,4 @@ class News(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.title

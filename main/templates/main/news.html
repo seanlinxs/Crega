@@ -6,9 +6,7 @@
 
 <div class="container">
 
-    <h2>China Railway Engineering Equipment (Australia) Pty Ltd</h2>
-
-    <hr />
+  <div class="sub-heading">China Railway Engineering Equipment (Australia) Pty Ltd</div>
 
   <div class="row news">
     <ul>
@@ -18,7 +16,11 @@
           <img src="{{ media_url }}/{{ n.image }}" />
         </div>
         <div class="news-content">
-          <a href="{% url 'singlenews' pk=n.id %}">{{ n.title }}</a>
+	  {% if n.source == 'INLINE' %}
+          <a href="{% url 'singlenews' pk=n.id %}" target="_blank">{{ n.title }}</a>
+	  {% else %}
+	  <a href="{{ n.content }}" target="_blank">{{ n.title }}</a>
+	  {% endif %}
         </div>
       </li>
       {% endfor %}

@@ -6,7 +6,6 @@ body {
 
 
 a, a:hover {
-    display: block;
     text-decoration: none;
 }
 
@@ -353,7 +352,6 @@ input#crega-btn-search {
 
             a, a:hover {
                 display: block;
-                text-decoration: none;
             }
 
             a {
@@ -385,10 +383,12 @@ input#crega-btn-search {
 
 .action {
     a {
+	display: inline;
         color: #AFAFAF;
     }
 
     a:hover {
+	display: inline;
         color: #0068FF;
     }
 }
@@ -498,4 +498,11 @@ label {
     color: #FFF;
     padding: 20px;
     background-color: rgb(0, 115, 255)
+}
+
+.sub-heading {
+    padding: 5px;
+    font-weight: 400;
+    font-size: 2.0em;
+    border-bottom: 1px solid #EEE;
 }

@@ -5,13 +5,8 @@
 {% block content %}
 
 <div class="container">
-  <div class="row section action">
-    <a href="{% url 'news' %}">Back</a>
-  </div>
-  <div class="row section">
-      <div class="news-heading">
-          {{ news.title }}
-      </div>
+  <div class="sub-heading">
+    {{ news.title }}
   </div>
   <div class="row section">
       <div class="news-image-container">
@@ -22,9 +17,6 @@
       <p class="text-justify">
           {{ content|safe }}
       </p>
-  </div>
-  <div class="row section action">
-    <a href="{% url 'news' %}">Back</a>
   </div>
 </div>
 
