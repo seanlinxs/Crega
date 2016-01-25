@@ -5,12 +5,12 @@
 {% block content %}
 
 <div class="container">
-  <div class="row section">
+  <div class="row">
     <div class="col-md-12">
       <p class="text-justify">{{ textblock_1|safe }}</p>
     </div>
   </div>
-  <div class="row section">
+  <div class="row">
     <div class="col-md-12 video-container">
       {% if missing_videolink_1 %}
       <p>{{ videolink_1 }}</p>
@@ -19,7 +19,7 @@
       {% endif %}
     </div>
   </div>
-  <div class="row section">
+  <div class="row">
     <div class="col-md-5">
       <div class="image-container">
         <img src="{{ media_url }}/{{ pageimage_1 }}" alt="{{ pageimage_1 }}" />
@@ -29,7 +29,7 @@
       <p class="text-justify">{{ textblock_2|safe }}</p>
     </div>
   </div>
-  <div class="row section">
+  <div class="row">
     <div class="col-md-5">
       <div class="image-container">
         <img src="{{ media_url }}/{{ pageimage_2 }}" alt="{{ pageimage_2 }}" />
