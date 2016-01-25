@@ -185,7 +185,8 @@ class Product(BaseView):
         product_name = self.kwargs.get('name')
         context = super(Product, self).get_context_data(**kwargs)
         context['product_styleclass'] = 'active'
-        context['breadcrumb'] = product_name.upper()
+        context['breadcrumb'] = 'PRODUCTS'
+        context['product_name'] = product_name
 
         site = get_object_or_404(Website, name='crega.com.au')
 

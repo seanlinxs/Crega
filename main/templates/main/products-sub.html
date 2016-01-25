@@ -2,24 +2,49 @@
 
 <div id="products-sub" class="row sub-menu">
   <div class="col-md-3">
-    <p class="nav-sub-heading"><a href="{% url 'product' name='Product1' %}">PRODUCT1</a></p>
-    <p class="text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla, risus auctor sagittis luctus, est erat ullamcorper dui, venenatis sagittis est eros sed lacus. Aliquam vel ornare magna, in posuere lorem. Donec nec eleifend metus. Duis quis maximus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque laoreet ante metus. Nam sed ex metus. Duis fermentum, sapien in dictum lacinia, turpis dui molestie elit, nec rhoncus ante est rhoncus magna. Sed id ligula sed nibh dapibus condimentum ut et metus. Morbi nibh est, sodales non dolor ut, faucibus feugiat ligula.
-    </p>
+    <p class="nav-sub-heading"><a href="{% url 'product' name='#' %}">TUNNELLING</a></p>
+    <ul>
+      <li><a href="{% url 'product' name='#' %}">EPB shield</a></li>
+      <li><a href="{% url 'product' name='#' %}">Mix-type TBM</a></li>
+      <li><a href="{% url 'product' name='#' %}">Slurry TBM</a></li>
+      <li>
+	<a href="{% url 'product' name='#' %}">Dual Mode TBM</a>
+	<ul>
+	  <li><a href="{% url 'product' name='#' %}">Type one: EPB-gripper/open TBM</a></li>
+	  <li><a href="{% url 'product' name='#' %}">Type two: EPB - slurry TBM</a></li>
+	</ul>
+      </li>
+      <li><a href="{% url 'product' name='#' %}">Rectangular TBM</a></li>
+      <li><a href="{% url 'product' name='#' %}">Hard Rock TBM</a></li>
+      <li><a href="{% url 'product' name='#' %}">Telescopic TBM</a></li>
+      <li><a href="{% url 'product' name='#' %}">Single shield TBM</a></li>
+    </ul>
   </div>
   <div class="col-md-3">
-    <p class="nav-sub-heading"><a href="{% url 'product' name='Product2' %}">PRODUCT2</a></p>
-    <p class="text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla, risus auctor sagittis luctus, est erat ullamcorper dui, venenatis sagittis est eros sed lacus. Aliquam vel ornare magna, in posuere lorem. Donec nec eleifend metus. Duis quis maximus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque laoreet ante metus. Nam sed ex metus. Duis fermentum, sapien in dictum lacinia, turpis dui molestie elit, nec rhoncus ante est rhoncus magna. Sed id ligula sed nibh dapibus condimentum ut et metus. Morbi nibh est, sodales non dolor ut, faucibus feugiat ligula.
-    </p>
+    <p class="nav-sub-heading"><a href="{% url 'product' name='Product2' %}">MICROTUNNELLING</a></p>
+    <ul>
+      <li><a href="{% url 'product' name='#' %}">Microtunnelling machine 1</a></li>
+      <li><a href="{% url 'product' name='#' %}">Microtunnelling machine 2</a></li>
+      <li><a href="{% url 'product' name='#' %}">Microtunnelling machine 3</a></li>
+    </ul>
   </div>
   <div class="col-md-3">
-    <p class="nav-sub-heading"><a href="{% url 'product' name='Product3' %}">PRODUCT3</a></p>
-    <p class="text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla, risus auctor sagittis luctus, est erat ullamcorper dui, venenatis sagittis est eros sed lacus. Aliquam vel ornare magna, in posuere lorem. Donec nec eleifend metus. Duis quis maximus massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque laoreet ante metus. Nam sed ex metus. Duis fermentum, sapien in dictum lacinia, turpis dui molestie elit, nec rhoncus ante est rhoncus magna. Sed id ligula sed nibh dapibus condimentum ut et metus. Morbi nibh est, sodales non dolor ut, faucibus feugiat ligula.
-    </p>
+    <p class="nav-sub-heading"><a href="{% url 'product' name='Product3' %}">BOX & PIPE JACKING MACHINE</a></p>
+    <ul>
+      <li><a href="{% url 'product' name='#' %}">Box & pipe jacking machine 1</a></li>
+      <li><a href="{% url 'product' name='#' %}">Box & pipe jacking machine 2</a></li>
+      <li><a href="{% url 'product' name='#' %}">Box & pipe jacking machine 3</a></li>
+    </ul>
   </div>
   <div class="col-md-3">
-    <img class="nav-sub-img" src="{% static 'main/images/secondary-box2.jpg' %}" alt="nav-sub-pic" />
+    <p class="nav-sub-heading"><a href="{% url 'product' name='Product3' %}">ANCILLARY TUNNELLING EQUIPMENT</a></p>
+    <ul>
+      <li><a href="{% url 'product' name='#' %}">Ancillary Tunnelling Equipment 1</a></li>
+      <li><a href="{% url 'product' name='#' %}">Ancillary Tunnelling Equipment 2</a></li>
+      <li><a href="{% url 'product' name='#' %}">Ancillary Tunnelling Equipment 3</a></li>
+    </ul>
   </div>
+  <!-- <div class="col-md-3"> -->
+  <!--   <img class="nav-sub-img" src="{% static 'main/images/secondary-box2.jpg' %}" alt="nav-sub-pic" /> -->
+  <!-- </div> -->
 </div>

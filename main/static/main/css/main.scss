@@ -470,6 +470,24 @@ input#crega-btn-search {
     a {
 	color: rgb(0, 115, 255);
     }
+
+    a:hover {
+	background-color: #EEE;
+	color: rgb(0, 115, 255);
+    }
+
+    ul {
+	list-style: outside none none;
+	padding: 5px 0 5px 20px;
+    }
+
+    li:before {
+	font-family: "Glyphicons Halflings";
+	font-size: 0.8em;
+	content: "\e258";
+	margin: 0 5px 0 -15px;
+	color: rgb(0, 115, 255)
+    }
 }
 
 .separate-banner {
