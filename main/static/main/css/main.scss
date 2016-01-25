@@ -377,10 +377,6 @@ input#crega-btn-search {
     overflow: auto;
 }
 
-.news-heading {
-    font-size: 20pt;
-}
-
 .action {
     a {
 	display: inline;
@@ -391,10 +387,6 @@ input#crega-btn-search {
 	display: inline;
         color: #0068FF;
     }
-}
-
-.section {
-    padding: 50px 8px 8px 0;
 }
 
 .video-container {
@@ -501,7 +493,8 @@ label {
 }
 
 .sub-heading {
-    padding: 5px;
+    padding: 5px 0 5px 0;
+    margin-bottom: 15px;
     font-weight: 400;
     font-size: 2.0em;
     border-bottom: 1px solid #EEE;
