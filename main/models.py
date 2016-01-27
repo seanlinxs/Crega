@@ -5,6 +5,14 @@ from django.db import models
 from django.utils import timezone
 from django.core.urlresolvers import reverse
 
+
+styleclasses = {
+    'ABOVE': 'row',
+    'LEFT': 'left col-md-5',
+    'RIGHT': 'right col-md-5',
+    'BELOW': 'row'
+}
+
 class Website(models.Model):
     name = models.CharField(max_length=200, unique=True)
     owner = models.ForeignKey(User)
@@ -21,7 +29,7 @@ class Website(models.Model):
 class Page(models.Model):
     name = models.CharField(max_length=200)
     site = models.ForeignKey(Website)
-    title = models.CharField(max_length=200, help_text="Title will be displayed in both browser's title bar and page title.")
+    title = models.CharField(max_length=200)
     heading = models.TextField(blank=True)
 
     
@@ -47,6 +55,28 @@ class TextBlock(models.Model):
         return self.name
 
 
+class Paragraph(models.Model):
+    name = models.CharField(max_length=200)
+    page = models.ForeignKey(Page)
+    markdown = models.TextField()
+    display_order = models.IntegerField()
+    image = models.FileField(null=True, blank=True, upload_to='paragraphimages/%Y/%m/%d')
+    video_link = models.CharField(max_length=500, null=True, blank=True, help_text="Only support youtube embedded video link, e.g https://www.youtube.com/embed/mqH2LLVloE4")
+    LAYOUTS = (
+        ('TB', 'Top text, bottom media'),
+        ('BT', 'Bottom text, top media'),
+        ('LR', 'Left text, right media'),
+        ('RL', 'Right text, left media')
+    )
+    layout = models.CharField(max_length=2, choices=LAYOUTS, default='LR')
+
+    class Meta:
+        ordering = ['display_order']
+
+    def __str__(self):
+        return self.name
+
+
 class PageImage(models.Model):
     name = models.CharField(max_length=200)
     image = models.FileField(upload_to='pageimages/%Y/%m/%d')
@@ -63,7 +93,7 @@ class PageImage(models.Model):
 
 class VideoLink(models.Model):
     name = models.CharField(max_length=200)
-    link = models.CharField(max_length=500)
+    link = models.CharField(max_length=500, help_text="Only support youtube embedded video link, e.g https://www.youtube.com/embed/mqH2LLVloE4")
     page = models.ForeignKey(Page)
 
 
