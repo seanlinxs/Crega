@@ -186,16 +186,16 @@ class Product(BaseView):
         context = super(Product, self).get_context_data(**kwargs)
         context['product_styleclass'] = 'active'
         context['breadcrumb'] = 'PRODUCTS'
-        context['product_name'] = product_name
 
         site = get_object_or_404(Website, name='crega.com.au')
 
         try:
-            page = site.page_set.get(name=product_name)
-            context['page_name'] = page.name
-            context['page_title'] = page.title
+            page = site.page_set.get(name=self.kwargs.get('name'))
+            context['heading'] = page.heading
+            context['page_title'] = page.title or page.heading
         except Page.DoesNotExist:
-            context['page_name'] = missing_page(product_name)
+            context['heading'] = missing_page(product_name)
+            context['page_title'] = missing_page(product_name)
 
         context['paragraphs'] = page.paragraph_set.all()
 

@@ -5,6 +5,8 @@ from django.db import models
 from django.utils import timezone
 from django.core.urlresolvers import reverse
 
+from markdown import markdown
+
 
 class Website(models.Model):
     name = models.CharField(max_length=200, unique=True)
@@ -67,7 +69,7 @@ class Paragraph(models.Model):
         ordering = ['display_order']
 
     def __str__(self):
-        return self.name
+        return markdown(self.markdown)
 
 
 class PageImage(models.Model):
