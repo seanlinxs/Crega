@@ -6,13 +6,6 @@ from django.utils import timezone
 from django.core.urlresolvers import reverse
 
 
-styleclasses = {
-    'ABOVE': 'row',
-    'LEFT': 'left col-md-5',
-    'RIGHT': 'right col-md-5',
-    'BELOW': 'row'
-}
-
 class Website(models.Model):
     name = models.CharField(max_length=200, unique=True)
     owner = models.ForeignKey(User)
