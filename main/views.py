@@ -61,25 +61,25 @@ class Home(BaseView):
             primary_box_image_1 = pageimages.get(name='Primary box image 1')
             context['primary_box_image_1'] = primary_box_image_1.image
         except PageImage.DoesNotExist:
-            context['primary_box_image_1'] = missing_image('Primary box image 1', '1920×288')
+            context['primary_box_image_1'] = missing_image('Primary box image 1', '1200×420')
 
         try:
             primary_box_image_2 = pageimages.get(name='Primary box image 2')
             context['primary_box_image_2'] = primary_box_image_2.image
         except PageImage.DoesNotExist:
-            context['primary_box_image_2'] = missing_image('Primary box image 2', '1920×288')
+            context['primary_box_image_2'] = missing_image('Primary box image 2', '1200×420')
 
         try:
             primary_box_image_3 = pageimages.get(name='Primary box image 3')
             context['primary_box_image_3'] = primary_box_image_3.image
         except PageImage.DoesNotExist:
-            context['primary_box_image_3'] = missing_image('Primary box image 3', '1920×288')
+            context['primary_box_image_3'] = missing_image('Primary box image 3', '1200×420')
 
         try:
             primary_box_image_4 = pageimages.get(name='Primary box image 4')
             context['primary_box_image_4'] = primary_box_image_4.image
         except PageImage.DoesNotExist:
-            context['primary_box_image_4'] = missing_image('Primary box image 4', '1920×288')
+            context['primary_box_image_4'] = missing_image('Primary box image 4', '1200×420')
 
         try:
             secondary_box_text_1 = textblocks.get(name='Secondary box text 1')
@@ -91,7 +91,7 @@ class Home(BaseView):
             secondary_box_image_1 = pageimages.get(name='Secondary box image 1')
             context['secondary_box_image_1'] = secondary_box_image_1.image
         except PageImage.DoesNotExist:
-            context['secondary_box_image_1'] = missing_image('Secondary box image 1', '350×248')
+            context['secondary_box_image_1'] = missing_image('Secondary box image 1', '256×165')
 
         try:
             secondary_box_text_2 = textblocks.get(name='Secondary box text 2')
@@ -103,7 +103,7 @@ class Home(BaseView):
             secondary_box_image_2 = pageimages.get(name='Secondary box image 2')
             context['secondary_box_image_2'] = secondary_box_image_2.image
         except PageImage.DoesNotExist:
-            context['secondary_box_image_2'] = missing_image('Secondary box image 2', '350×248')
+            context['secondary_box_image_2'] = missing_image('Secondary box image 2', '256×165')
 
         try:
             secondary_box_text_3 = textblocks.get(name='Secondary box text 3')
@@ -115,9 +115,19 @@ class Home(BaseView):
             secondary_box_image_3 = pageimages.get(name='Secondary box image 3')
             context['secondary_box_image_3'] = secondary_box_image_3.image
         except PageImage.DoesNotExist:
-            context['secondary_box_image_3'] = missing_image('Secondary box image 3', '350×248')
+            context['secondary_box_image_3'] = missing_image('Secondary box image 3', '256×165')
 
-        context['news'] = site.news_set.all()
+        try:
+            secondary_box_text_4 = textblocks.get(name='Secondary box text 4')
+            context['secondary_box_text_4'] = secondary_box_text_4.content
+        except TextBlock.DoesNotExist:
+            context['secondary_box_text_4'] = missing_textblock('Secondary box text 4')
+
+        try:
+            secondary_box_image_4 = pageimages.get(name='Secondary box image 4')
+            context['secondary_box_image_4'] = secondary_box_image_4.image
+        except PageImage.DoesNotExist:
+            context['secondary_box_image_4'] = missing_image('Secondary box image 4', '256×165')
 
         return context
 
@@ -190,14 +200,13 @@ class Product(BaseView):
         site = get_object_or_404(Website, name='crega.com.au')
 
         try:
-            page = product_name
-            context['heading'] = page.heading
+            page = site.page_set.get(name=product_name)
+            Context['heading'] = page.heading
             context['page_title'] = page.title or page.heading
+            context['paragraphs'] = page.paragraph_set.all()
         except Page.DoesNotExist:
             context['heading'] = missing_page(product_name)
             context['page_title'] = missing_page(product_name)
-
-        context['paragraphs'] = page.paragraph_set.all()
 
         return context
 
@@ -214,14 +223,13 @@ class Service(BaseView):
         site = get_object_or_404(Website, name='crega.com.au')
 
         try:
-            page = service_name
+            page = site.page_set.get(name=service_name)
             context['heading'] = page.heading
             context['page_title'] = page.title or page.heading
+            context['paragraphs'] = page.paragraph_set.all()
         except Page.DoesNotExist:
             context['heading'] = missing_page(service_name)
             context['page_title'] = missing_page(service_name)
-
-        context['paragraphs'] = page.paragraph_set.all()
 
         return context
 
@@ -238,14 +246,13 @@ class Project(BaseView):
         site = get_object_or_404(Website, name='crega.com.au')
 
         try:
-            page = project_name
+            page = site.page_set.get(name=project_name)
             context['heading'] = page.heading
             context['page_title'] = page.title or page.heading
+            context['paragraphs'] = page.paragraph_set.all()
         except Page.DoesNotExist:
             context['heading'] = missing_page(project_name)
             context['page_title'] = missing_page(project_name)
-
-        context['paragraphs'] = page.paragraph_set.all()
 
         return context
 
