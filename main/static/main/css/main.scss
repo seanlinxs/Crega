@@ -229,24 +229,6 @@ input#crega-btn-search {
     background: rgba(51, 51, 51, 0.8);
 }
 
-@-webkit-keyframes zoom {
-    from {
-	-webkit-transform: scale(1, 1);
-    }
-    to {
-	-webkit-transform: scale(4, 4);
-    }
-}
-
-@keyframes zoom {
-    from {
-	transform: scale(1, 1);
-    }
-    to {
-	transform: scale(4, 4);
-    }
-}
-
 .primary-box-bgimage {
     img {
         z-index: -99;
@@ -257,9 +239,33 @@ input#crega-btn-search {
     box-shadow: 0 0 10px #333;
 }
 
+@-webkit-keyframes zoom {
+    0% {
+	-webkit-transform: scale(1, 1);
+    }
+    80% {
+	-webkit-transform: scale(4, 4);
+    }
+    100% {
+	-webkit-transform: scale(4, 4);
+    }
+}
+
+@keyframes zoom {
+    0% {
+	transform: scale(1, 1);
+    }
+    80% {
+	transform: scale(4, 4);
+    }
+    100% {
+	transform: scale(4, 4);
+    }
+}
+
 .slick-current {
-    -webkit-animation: zoom 50s;
-    animation: zoom 50s;
+    -webkit-animation: zoom 100s;
+    animation: zoom 100s;
     -webkit-animation-delay: 500ms;
     animation-delay: 500ms;
 }
