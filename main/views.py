@@ -190,7 +190,7 @@ class Product(BaseView):
         site = get_object_or_404(Website, name='crega.com.au')
 
         try:
-            page = site.page_set.get(name=self.kwargs.get('name'))
+            page = product_name
             context['heading'] = page.heading
             context['page_title'] = page.title or page.heading
         except Page.DoesNotExist:
@@ -209,54 +209,19 @@ class Service(BaseView):
         service_name = self.kwargs.get('name')
         context = super(Service, self).get_context_data(**kwargs)
         context['service_styleclass'] = 'active'
-        context['breadcrumb'] = service_name.upper()
+        context['breadcrumb'] = 'SERVICES'
 
         site = get_object_or_404(Website, name='crega.com.au')
 
         try:
-            page = site.page_set.get(name=service_name)
-            context['page_name'] = page.name
-            context['page_title'] = page.title
+            page = service_name
+            context['heading'] = page.heading
+            context['page_title'] = page.title or page.heading
         except Page.DoesNotExist:
-            context['page_name'] = missing_page(service_name)
-            return context
+            context['heading'] = missing_page(service_name)
+            context['page_title'] = missing_page(service_name)
 
-        try:
-            textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
-        except TextBlock.DoesNotExist:
-            context['textblock_1'] = missing_textblock('Text block 1')
-
-        try:
-            videolink_1 = page.videolink_set.get(name='Video link 1')
-            context['videolink_1'] = videolink_1.link
-        except VideoLink.DoesNotExist:
-            context['missing_videolink_1'] = True
-            context['videolink_1'] = missing_videolink('Video link 1')
-
-        try:
-            pageimage_1 = page.pageimage_set.get(name='Page image 1')
-            context['pageimage_1'] = pageimage_1.image
-        except PageImage.DoesNotExist:
-            context['pageimage_1'] = missing_image('Page image 1', '455×280')
-
-        try:
-            textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
-        except TextBlock.DoesNotExist:
-            context['textblock_2'] = missing_textblock('Text block 2')
-
-        try:
-            pageimage_2 = page.pageimage_set.get(name='Page image 2')
-            context['pageimage_2'] = pageimage_2.image
-        except PageImage.DoesNotExist:
-            context['pageimage_2'] = missing_image('Page image 2', '455×280')
-
-        try:
-            textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
-        except TextBlock.DoesNotExist:
-            context['textblock_3'] = missing_textblock('Text block 3')
+        context['paragraphs'] = page.paragraph_set.all()
 
         return context
 
@@ -268,54 +233,19 @@ class Project(BaseView):
         project_name = self.kwargs.get('name')
         context = super(Project, self).get_context_data(**kwargs)
         context['project_styleclass'] = 'active'
-        context['breadcrumb'] = project_name.upper()
+        context['breadcrumb'] = 'PROJECTS'
 
         site = get_object_or_404(Website, name='crega.com.au')
 
         try:
-            page = site.page_set.get(name=project_name)
-            context['page_name'] = page.name
-            context['page_title'] = page.title
+            page = project_name
+            context['heading'] = page.heading
+            context['page_title'] = page.title or page.heading
         except Page.DoesNotExist:
-            context['page_name'] = missing_page(project_name)
-            return context
+            context['heading'] = missing_page(project_name)
+            context['page_title'] = missing_page(project_name)
 
-        try:
-            textblock_1 = page.textblock_set.get(name='Text block 1')
-            context['textblock_1'] = textblock_1.content.replace('\n', '<br/>')
-        except TextBlock.DoesNotExist:
-            context['textblock_1'] = missing_textblock('Text block 1')
-
-        try:
-            videolink_1 = page.videolink_set.get(name='Video link 1')
-            context['videolink_1'] = videolink_1.link
-        except VideoLink.DoesNotExist:
-            context['missing_videolink_1'] = True
-            context['videolink_1'] = missing_videolink('Video link 1')
-
-        try:
-            pageimage_1 = page.pageimage_set.get(name='Page image 1')
-            context['pageimage_1'] = pageimage_1.image
-        except PageImage.DoesNotExist:
-            context['pageimage_1'] = missing_image('Page image 1', '455×280')
-
-        try:
-            textblock_2 = page.textblock_set.get(name='Text block 2')
-            context['textblock_2'] = textblock_2.content.replace('\n', '<br/>')
-        except TextBlock.DoesNotExist:
-            context['textblock_2'] = missing_textblock('Text block 2')
-
-        try:
-            pageimage_2 = page.pageimage_set.get(name='Page image 2')
-            context['pageimage_2'] = pageimage_2.image
-        except PageImage.DoesNotExist:
-            context['pageimage_2'] = missing_image('Page image 2', '455×280')
-
-        try:
-            textblock_3 = page.textblock_set.get(name='Text block 3')
-            context['textblock_3'] = textblock_3.content.replace('\n', '<br/>')
-        except TextBlock.DoesNotExist:
-            context['textblock_3'] = missing_textblock('Text block 3')
+        context['paragraphs'] = page.paragraph_set.all()
 
         return context
 
