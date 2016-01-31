@@ -201,7 +201,7 @@ class Product(BaseView):
 
         try:
             page = site.page_set.get(name=product_name)
-            Context['heading'] = page.heading
+            context['heading'] = page.heading
             context['page_title'] = page.title or page.heading
             context['paragraphs'] = page.paragraph_set.all()
         except Page.DoesNotExist:
