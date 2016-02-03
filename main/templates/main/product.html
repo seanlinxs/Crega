@@ -5,108 +5,115 @@
 {% block content %}
 
 <div class="container">
-  <div class="sub-heading">
-    {{ heading }}
-  </div>
-  {% for p in paragraphs %}
-  <div class="row paragraph">
-    {% if p.layout == 'TB' %}
-    <div class="col-md-12">
-      <p class="text-justify">{{ p|safe }}</p>
+  <div class="row">
+    <div class="col-md-3">
+      {% include "main/products-side.html" %}
     </div>
-    <div class="col-md-12">
-      {% if p.image %}
-      <div class="row">
-  	<div class="col-md-12">
-  	  <img src="{{ media_url }}/{{ p.image.url }}" alt="p.name" />
-  	</div>
+    <div class="col-md-9">
+      <div class="sub-heading">
+	{{ heading }}
       </div>
-      {% endif %}
-      {% if p.video_link %}
-      <div class="row">
-      	<div class="col-md-12">
-	  <div class="embed-responsive embed-responsive-16by9">
-      	    <iframe class="embed-responsive-item" src="{{ p.video_link }}"></iframe>
-	  </div>
-      	</div>
-      </div>
-      {% endif %}
-    </div>
-    {% endif %}
-
-    {% if p.layout == 'BT' %}
-    <div class="col-md-12">
-      {% if p.image %}
-      <div class="row">
-  	<div class="col-md-12">
-  	  <img src="{{ media_url }}/{{ p.image.url }}" alt="p.name" />
-  	</div>
-      </div>
-      {% endif %}
-      {% if p.video_link %}
-      <div class="row">
-      	<div class="col-md-12">
-	  <div class="embed-responsive embed-responsive-16by9">
-      	    <iframe class="embed-responsive-item" src="{{ p.video_link }}"></iframe>
-	  </div>
-      	</div>
-      </div>
-      {% endif %}
-    </div>
-    <div class="col-md-12">
-      <p class="text-justify">{{ p|safe }}</p>
-    </div>
-    {% endif %}
-
-    {% if p.layout == 'LR' %}
-    <div class="col-md-7">
-      <p class="text-justify">{{ p|safe }}</p>
-    </div>
-    <div class="col-md-5">
-      {% if p.image %}
-      <div class="row">
-  	<div class="col-md-12">
-  	  <img src="{{ media_url }}/{{ p.image.url }}" alt="p.name" />
-  	</div>
-      </div>
-      {% endif %}
-      {% if p.video_link %}
-      <div class="row">
-      	<div class="col-md-12">
-	  <div class="embed-responsive embed-responsive-16by9">
-      	    <iframe class="embed-responsive-item" src="{{ p.video_link }}"></iframe>
-	  </div>
-      	</div>
-      </div>
-      {% endif %}
-    </div>
-    {% endif %}
-
-    {% if p.layout == 'RL' %}
-    <div class="col-md-5">
-      {% if p.image %}
-      <div class="row">
+      {% for p in paragraphs %}
+      <div class="row paragraph">
+	{% if p.layout == 'TB' %}
 	<div class="col-md-12">
-  	  <img src="{{ media_url }}/{{ p.image.url }}" alt="p.name" />
+	  <p class="text-justify">{{ p|safe }}</p>
 	</div>
-      </div>
-      {% endif %}
-      {% if p.video_link %}
-      <div class="row">
-      	<div class="col-md-12">
-	  <div class="embed-responsive embed-responsive-16by9">
-      	    <iframe class="embed-responsive-item" src="{{ p.video_link }}"></iframe>
+	<div class="col-md-12">
+	  {% if p.image %}
+	  <div class="row">
+  	    <div class="col-md-12">
+  	      <img src="{{ media_url }}/{{ p.image.url }}" alt="p.name" />
+  	    </div>
 	  </div>
-      	</div>
+	  {% endif %}
+	  {% if p.video_link %}
+	  <div class="row">
+      	    <div class="col-md-12">
+	      <div class="embed-responsive embed-responsive-16by9">
+      		<iframe class="embed-responsive-item" src="{{ p.video_link }}"></iframe>
+	      </div>
+      	    </div>
+	  </div>
+	  {% endif %}
+	</div>
+	{% endif %}
+
+	{% if p.layout == 'BT' %}
+	<div class="col-md-12">
+	  {% if p.image %}
+	  <div class="row">
+  	    <div class="col-md-12">
+  	      <img src="{{ media_url }}/{{ p.image.url }}" alt="p.name" />
+  	    </div>
+	  </div>
+	  {% endif %}
+	  {% if p.video_link %}
+	  <div class="row">
+      	    <div class="col-md-12">
+	      <div class="embed-responsive embed-responsive-16by9">
+      		<iframe class="embed-responsive-item" src="{{ p.video_link }}"></iframe>
+	      </div>
+      	    </div>
+	  </div>
+	  {% endif %}
+	</div>
+	<div class="col-md-12">
+	  <p class="text-justify">{{ p|safe }}</p>
+	</div>
+	{% endif %}
+
+	{% if p.layout == 'LR' %}
+	<div class="col-md-7">
+	  <p class="text-justify">{{ p|safe }}</p>
+	</div>
+	<div class="col-md-5">
+	  {% if p.image %}
+	  <div class="row">
+  	    <div class="col-md-12">
+  	      <img src="{{ media_url }}/{{ p.image.url }}" alt="p.name" />
+  	    </div>
+	  </div>
+	  {% endif %}
+	  {% if p.video_link %}
+	  <div class="row">
+      	    <div class="col-md-12">
+	      <div class="embed-responsive embed-responsive-16by9">
+      		<iframe class="embed-responsive-item" src="{{ p.video_link }}"></iframe>
+	      </div>
+      	    </div>
+	  </div>
+	  {% endif %}
+	</div>
+	{% endif %}
+
+	{% if p.layout == 'RL' %}
+	<div class="col-md-5">
+	  {% if p.image %}
+	  <div class="row">
+	    <div class="col-md-12">
+  	      <img src="{{ media_url }}/{{ p.image.url }}" alt="p.name" />
+	    </div>
+	  </div>
+	  {% endif %}
+	  {% if p.video_link %}
+	  <div class="row">
+      	    <div class="col-md-12">
+	      <div class="embed-responsive embed-responsive-16by9">
+      		<iframe class="embed-responsive-item" src="{{ p.video_link }}"></iframe>
+	      </div>
+      	    </div>
+	  </div>
+	  {% endif %}
+	</div>
+	<div class="col-md-7">
+	  <p class="text-justify">{{ p|safe }}</p>
+	</div>
+	{% endif %}
       </div>
-      {% endif %}
+      {% endfor %}
     </div>
-    <div class="col-md-7">
-      <p class="text-justify">{{ p|safe }}</p>
-    </div>
-    {% endif %}
   </div>
-  {% endfor %}
 </div>
 
 {% endblock %}

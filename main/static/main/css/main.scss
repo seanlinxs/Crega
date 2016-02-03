@@ -4,17 +4,14 @@ body {
     padding-top: 88px;
 }
 
-
-a, a:hover {
-    text-decoration: none;
-}
-
 a {
     color: #EEE;
+    text-decoration: none;
 }
 
 a:hover {
     color: #FFF;
+    text-decoration: none;
 }
 
 a:focus {
@@ -139,11 +136,11 @@ input#crega-btn-search {
         font-weight: 400;
 
         a {
-          color: #FCB712;
+            color: #FCB712;
         }
 
         a:hover {
-          color: #FFF;
+            color: #FFF;
         }
     }
 
@@ -358,16 +355,14 @@ input#crega-btn-search {
                 float: left;
             }
 
-            a, a:hover {
-                display: block;
-            }
-
             a {
                 color: #383838;
-            }
-
-            a:hover {
+                display: block;
+	    }
+	    
+	    a:hover {
                 color: #0068FF;
+                display: block;
             }
         }
     }
@@ -417,36 +412,41 @@ input#crega-btn-search {
 }
 
 #contact {
-    a, a:hover {
+    a {
+        text-decoration: underline;
+        color: blue;
+    }
+
+    a:hover {
         text-decoration: underline;
         color: blue;
     }    
 }
 
 .thumbnail {
-  position: relative;
-  margin-bottom: 0px;
+    position: relative;
+    margin-bottom: 0px;
 }
 
 .thumbnail img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
 
 .thumbnail img.portrait {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .heading {
-  font-size: 28pt;
-  font-weight: 400;
+    font-size: 28pt;
+    font-weight: 400;
 }
 
 .nav-sub-img {
@@ -478,10 +478,10 @@ input#crega-btn-search {
     a {
 	color: rgb(0, 115, 255);
     }
-
+    
     a:hover {
-	background-color: #EEE;
 	color: rgb(0, 115, 255);
+	background-color: #EEE;
     }
 
     ul {
@@ -489,12 +489,52 @@ input#crega-btn-search {
 	padding: 5px 0 5px 20px;
     }
 
-    li:before {
+    li:hover:before {
 	font-family: "Glyphicons Halflings";
 	font-size: 0.8em;
 	content: "\e258";
-	margin: 0 5px 0 -15px;
+	margin: 0 6px 0 -15px;
 	color: rgb(0, 115, 255)
+    }
+}
+
+.side-menu {
+    font-size: 0.8em;
+    padding: 5px;
+
+    a {
+	color: rgb(0, 115, 255);
+    }
+
+    a:hover {
+	background-color: #EEE;
+    }
+
+    ul {
+	list-style: outside none none;
+	padding: 5px 0 5px 20px;
+    }
+
+    li:hover:before {
+	font-family: "Glyphicons Halflings";
+	font-size: 0.8em;
+	content: "\e258";
+	margin: 0 6px 0 -15px;
+	color: rgb(0, 115, 255);
+    }
+
+    li.active {
+	a {
+	    background-color: #EEE;
+	}
+    }
+
+    li.active:before {
+	font-family: "Glyphicons Halflings";
+	font-size: 0.8em;
+	content: "\e258";
+	margin: 0 6px 0 -15px;
+	color: rgb(0, 115, 255);
     }
 }
 
