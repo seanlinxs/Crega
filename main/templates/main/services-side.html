@@ -1,0 +1,10 @@
+{% load staticfiles %}
+{% load main_filters %}
+
+<div class="side-menu">
+  <ul>
+    <li class="{{ styleclass|get:'TBM Leasing' }}"><a href="{% url 'service' name='TBM Leasing' %}">TBM Leasing</a></li>
+    <li class="{{ styleclass|get:'TBM Remanufacturing' }}"><a href="{% url 'service' name='TBM Remanufacturing' %}">TBM Remanufacturing</a></li>
+    <li class="{{ styleclass|get:'Technical Services' }}"><a href="{% url 'service' name='Technical Services' %}">Technical Services</a></li>
+  </ul>
+</div>

@@ -1,31 +1,32 @@
 {% load staticfiles %}
+{% load main_filters %}
 
 <div class="side-menu">
   <p class="nav-sub-heading">TUNNELLING EQUIPMENT</p>
   <ul>
-    <li><a href="{% url 'product' name='EPB shield' %}">EPB shield</a></li>
-    <li><a href="{% url 'product' name='Mix-type TBM' %}">Mix-type TBM</a></li>
-    <li><a href="{% url 'product' name='Slurry TBM' %}">Slurry TBM</a></li>
-    <li><a href="{% url 'product' name='Hybrid TBM' %}">Hybrid TBM</a></li>
-    <li><a href="{% url 'product' name='Rectangular TBM' %}">Rectangular TBM</a></li>
-    <li><a href="{% url 'product' name='Pipe Jacking Machine' %}">Pipe Jacking Machine</a></li>
-    <li><a href="{% url 'product' name='Gripper TBM' %}">Gripper TBM</a></li>
-    <li><a href="{% url 'product' name='Single shield TBM' %}">Single shield TBM</a></li>
-    <li><a href="{% url 'product' name='Double Shield TBM' %}">Double Shield TBM</a></li>
-    <li><a href="{% url 'product' name='Tunnel Enlarging Machine (or Reaming TBM)' %}">Tunnel Enlarging Machine (or Reaming TBM)</a></li>
+    <li class="{{ styleclass|get:'EPB shiled' }}"><a href="{% url 'product' name='EPB shield' %}">EPB shield</a></li>
+    <li class="{{ styleclass|get:'Mix-type TBM' }}"><a href="{% url 'product' name='Mix-type TBM' %}">Mix-type TBM</a></li>
+    <li class="{{ styleclass|get:'Slurry TBM' }}"><a href="{% url 'product' name='Slurry TBM' %}">Slurry TBM</a></li>
+    <li class="{{ styleclass|get:'Hybrid TBM' }}"><a href="{% url 'product' name='Hybrid TBM' %}">Hybrid TBM</a></li>
+    <li class="{{ styleclass|get:'Rectangular TBM' }}"><a href="{% url 'product' name='Rectangular TBM' %}">Rectangular TBM</a></li>
+    <li class="{{ styleclass|get:'Pipe Jacking Machine' }}"><a href="{% url 'product' name='Pipe Jacking Machine' %}">Pipe Jacking Machine</a></li>
+    <li class="{{ styleclass|get:'Gripper TBM' }}"><a href="{% url 'product' name='Gripper TBM' %}">Gripper TBM</a></li>
+    <li class="{{ styleclass|get:'Single shield TBM' }}"><a href="{% url 'product' name='Single shield TBM' %}">Single shield TBM</a></li>
+    <li class="{{ styleclass|get:'Double Shield TBM' }}"><a href="{% url 'product' name='Double Shield TBM' %}">Double Shield TBM</a></li>
+    <li class="{{ styleclass|get:'Tunnel Enlarging Machine (or Reaming TBM)' }}"><a href="{% url 'product' name='Tunnel Enlarging Machine (or Reaming TBM)' %}">Tunnel Enlarging Machine (or Reaming TBM)</a></li>
   </ul>
   <p class="nav-sub-heading">MINING EQUIPMENT</p>
   <ul>
-    <li><a href="{% url 'product' name='Inclined Shaft TBM, Coal Lane TBM' %}">Inclined Shaft TBM, Coal Lane TBM</a></li>
-    <li><a href="{% url 'product' name='Shaft Boring Machine' %}">Shaft Boring Machine</a></li>
-    <li><a href="{% url 'product' name='Raise Borer' %}">Raise Borer</a></li>
-    <li><a href="{% url 'product' name='Mining Machinery' %}">Mining Machinery</a></li>
+    <li class="{{ styleclass|get:'Inclined Shaft TBM, Coal Lane TBM' }}"><a href="{% url 'product' name='Inclined Shaft TBM, Coal Lane TBM' %}">Inclined Shaft TBM, Coal Lane TBM</a></li>
+    <li class="{{ styleclass|get:'Shaft Boring Machine' }}"><a href="{% url 'product' name='Shaft Boring Machine' %}">Shaft Boring Machine</a></li>
+    <li class="{{ styleclass|get:'Raise Borer' }}"><a href="{% url 'product' name='Raise Borer' %}">Raise Borer</a></li>
+    <li class="{{ styleclass|get:'Mining Machinery' }}"><a href="{% url 'product' name='Mining Machinery' %}">Mining Machinery</a></li>
   </ul>
   <p class="nav-sub-heading">AUXILIARY EQUIPMENT</p>
   <ul>
-    <li><a href="{% url 'product' name='Tunnelling Work Machinery' %}">Tunnelling Work Machinery</a></li>
-    <li><a href="{% url 'product' name='Locomotive&sol;Rolling Stock' %}">Locomotive&sol;Rolling Stock</a></li>
-    <li><a href="{% url 'product' name='Cutters' %}">Cutters</a></li>
-    <li><a href="{% url 'product' name='Piling Machinery' %}">Piling Machinery</a></li>
+    <li class="{{ styleclass|get:'Tunnelling Work Machinery' }}"><a href="{% url 'product' name='Tunnelling Work Machinery' %}">Tunnelling Work Machinery</a></li>
+    <li class="{{ styleclass|get:'Locomotive&sol;Rolling Stock' }}"><a href="{% url 'product' name='Locomotive&sol;Rolling Stock' %}">Locomotive&sol;Rolling Stock</a></li>
+    <li class="{{ styleclass|get:'Cutters' }}"><a href="{% url 'product' name='Cutters' %}">Cutters</a></li>
+    <li class="{{ styleclass|get:'Piling Machinery' }}"><a href="{% url 'product' name='Piling Machinery' %}">Piling Machinery</a></li>
   </ul>
 </div>

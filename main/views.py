@@ -196,6 +196,7 @@ class Product(BaseView):
         context = super(Product, self).get_context_data(**kwargs)
         context['product_styleclass'] = 'active'
         context['breadcrumb'] = 'PRODUCTS'
+        context['styleclass'] = { product_name: 'active' }
 
         site = get_object_or_404(Website, name='crega.com.au')
 
@@ -212,13 +213,14 @@ class Product(BaseView):
 
 
 class Service(BaseView):
-    template_name = 'main/product.html'
+    template_name = 'main/service.html'
 
     def get_context_data(self, **kwargs):
         service_name = self.kwargs.get('name')
         context = super(Service, self).get_context_data(**kwargs)
         context['service_styleclass'] = 'active'
         context['breadcrumb'] = 'SERVICES'
+        context['styleclass'] = { service_name: 'active' }
 
         site = get_object_or_404(Website, name='crega.com.au')
 
