@@ -297,6 +297,14 @@ input#crega-btn-search {
     position: absolute;
     font-size: 1.2em;
     margin-top: -28px;
+
+    a {
+	color: rgb(0, 115, 255);
+    }
+
+    a:hover {
+	color: rgb(0, 115, 255);
+    }
 }
 
 .secondary-box-footer {
@@ -313,7 +321,6 @@ input#crega-btn-search {
     a:hover {
 	color: rgb(0, 115, 255);
     }
-
 }
 
 .secondary-box-bgimage {

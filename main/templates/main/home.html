@@ -39,10 +39,10 @@
             <img src="{{ media_url }}/{{ secondary_box_image_1 }}" alt="{{ secondary_box_image_1 }}">
           </div>
           <div class="secondary-box-heading">
-            PRODUCTS
+            <a href="{% url 'product' name='Product Home Page' %}">PRODUCTS</a>
           </div>
           <div class="secondary-box-footer">
-            <a href="{% url 'product' name='Products Home Page' %}">MORE</a>
+            <a href="{% url 'product' name='Product Home Page' %}">MORE</a>
           </div>
         </div>
       </li>
@@ -52,10 +52,10 @@
             <img src="{{ media_url }}/{{ secondary_box_image_2 }}" alt="{{ secondary_box_image_2 }}">
           </div>
           <div class="secondary-box-heading">
-            SERVICES
+            <a href="{% url 'service' name='Service Home Page' %}">SERVICES</a>
           </div>
           <div class="secondary-box-footer">
-            <a href="{% url 'service' name='Services Home Page' %}">MORE</a>
+            <a href="{% url 'service' name='Service Home Page' %}">MORE</a>
           </div>
         </div>
       </li>
@@ -78,7 +78,7 @@
             <img src="{{ media_url }}/{{ secondary_box_image_4 }}" alt="{{ secondary_box_image_4 }}">
           </div>
           <div class="secondary-box-heading">
-            NEWS
+            <a href="{% url 'news' %}">NEWS</a>
           </div>
           <div class="secondary-box-footer">
             <a href="{% url 'news' %}">MORE</a>
