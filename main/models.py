@@ -110,10 +110,11 @@ class News(models.Model):
         ('REFERENCE', 'External Link')
     )
     source = models.CharField(max_length=20, choices=NEWS_SOURCES, default='INLINE')
+    release_date = models.DateField()
 
 
     class Meta:
-        ordering = ['id']
+        ordering = ['-release_date', 'id']
 
 
     def __str__(self):
