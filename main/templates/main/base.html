@@ -44,7 +44,7 @@
             <li><div id="about-us-link" class="{{ about_styleclass }}">ABOUT US</div></li>
             <li><div id="products-link" class="{{ product_styleclass }}">PRODUCTS <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
 	    <li><div id="services-link" class="{{ service_styleclass }}">SERVICES <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
-	    <li><div id="projects-link" class="{{ project_styleclass }}">PROJECTS <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li>
+	    <!-- <li><div id="projects-link" class="{{ project_styleclass }}">PROJECTS <span class="small-icon glyphicon glyphicon-menu-down"></span></div></li> -->
             <li><div id="news-link" class="{{ news_styleclass }}">NEWS</div></li>
             <li><div id="enquiry-link" class="{{ enquiry_styleclass }}">ENQUIRIES</div></li>
             <li><div id="contact-us-link" class="{{ contact_styleclass }}">CONTACT US</div></li>
@@ -52,7 +52,7 @@
         </div><!-- /.navbar-collapse -->
 	{% include "main/products-sub.html" %}
 	{% include "main/services-sub.html" %}
-	{% include "main/projects-sub.html" %}
+	<!-- {% include "main/projects-sub.html" %} -->
       </div><!-- /.container -->
     </nav>
 
@@ -109,10 +109,10 @@
       $("#services-link").mouseout(function() { hideSub("services-sub"); });
       $("#services-sub").mouseout(function() { hideSub("services-sub"); });
 
-      $("#projects-link").mouseover(function() { showSub("projects-sub"); });
-      $("#projects-sub").mouseover(function() { showSub("projects-sub"); });
-      $("#projects-link").mouseout(function() { hideSub("projects-sub"); });
-      $("#projects-sub").mouseout(function() { hideSub("projects-sub"); });
+      <!-- $("#projects-link").mouseover(function() { showSub("projects-sub"); }); -->
+      <!-- $("#projects-sub").mouseover(function() { showSub("projects-sub"); }); -->
+      <!-- $("#projects-link").mouseout(function() { hideSub("projects-sub"); }); -->
+      <!-- $("#projects-sub").mouseout(function() { hideSub("projects-sub"); }); -->
 
       $("#home-link").click(function() { window.location="/"; });
       $("#about-us-link").click(function() { window.location="{% url 'about' %}"; });

@@ -284,6 +284,7 @@ input#crega-btn-search {
         li {
             float: left;
             overflow: inherit;
+	    margin-left: 65px;
 
             .secondary-box {
                 width: 268px;
@@ -478,8 +479,8 @@ input#crega-btn-search {
     background-color: #FFFFFF;
     border-top: 5px solid rgb(0, 115, 255);
     width: inherit;
-    font-size: 8pt;
-    padding: 5px;
+    font-size: 0.8em;
+    padding: 15px;
     box-shadow: 0px 15px 15px #333;
 
     a {
