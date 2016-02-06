@@ -7,15 +7,21 @@
     </p>
   </div>
   <div class="col-md-3">
-    <img class="nav-sub-img" src="{% static 'main/images/TBM Leasing.jpg' %}" alt="TBM Leasing.jpg" />
+    <a href="{% url 'service' name='TBM Leasing' %}">
+      <img class="nav-sub-img" src="{% static 'main/images/TBM Leasing.jpg' %}" alt="TBM Leasing.jpg" />
+    </a>
     <p class="nav-sub-heading"><a href="{% url 'service' name='TBM Leasing' %}">TBM Leasing</a></p>
   </div>
   <div class="col-md-3">
-    <img class="nav-sub-img" src="{% static 'main/images/TBM Remanufacturing.jpg' %}" alt="TBM Remanufacturing.jpg" />
+    <a href="{% url 'service' name='TBM Remanufacturing' %}">
+      <img class="nav-sub-img" src="{% static 'main/images/TBM Remanufacturing.jpg' %}" alt="TBM Remanufacturing.jpg" />
+    </a>
     <p class="nav-sub-heading"><a href="{% url 'service' name='TBM Remanufacturing' %}">TBM Remanufacturing</a></p>
   </div>
   <div class="col-md-3">
-    <img class="nav-sub-img" src="{% static 'main/images/Technical Services.jpg' %}" alt="Technical Services.jpg" />
+    <a href="{% url 'service' name='Technical Services' %}">
+      <img class="nav-sub-img" src="{% static 'main/images/Technical Services.jpg' %}" alt="Technical Services.jpg" />
+    </a>
     <p class="nav-sub-heading"><a href="{% url 'service' name='Technical Services' %}">Technical Services</a></p>
   </div>
 </div>
