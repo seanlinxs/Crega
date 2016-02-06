@@ -28,7 +28,7 @@
 <div class="container">
   <div class="separate-banner">
     <p class="text-justify">
-      China Railway Engineering Equipment (Australia) Pty Ltd (CREGA) has been established in Australia pursuant to a Cooperation Partnership Agreement with China Railway Engineering Equipment Group (CREG) which is a subsidiary company of the pubic listed China Railway Engineering Corporation (CREC), a Fortune 500 and Brand 500 Company and a key state-owned company under Chinese Central Government.
+      China Railway Engineering Equipment (Australia) Pty Ltd (CREGA) has been established in Australia pursuant to a Cooperation Partnership Agreement with China Railway Engineering Equipment Group (CREG) which is a subsidiary company of the pubic listed China Railway Engineering Corporation (CREC), a Fortune Global 500 Company.
     </p>
   </div>
   <div class="secondary-boxes">
@@ -36,7 +36,9 @@
       <li>
         <div class="secondary-box">
           <div class="secondary-box-bgimage">
-            <img src="{{ media_url }}/{{ secondary_box_image_1 }}" alt="{{ secondary_box_image_1 }}">
+	    <a href="{% url 'product' name='Product Home Page' %}">
+              <img src="{{ media_url }}/{{ secondary_box_image_1 }}" alt="{{ secondary_box_image_1 }}">
+	    </a>
           </div>
           <div class="secondary-box-heading">
             <a href="{% url 'product' name='Product Home Page' %}">PRODUCTS</a>
@@ -49,7 +51,9 @@
       <li>
         <div class="secondary-box">
           <div class="secondary-box-bgimage">
-            <img src="{{ media_url }}/{{ secondary_box_image_2 }}" alt="{{ secondary_box_image_2 }}">
+	    <a href="{% url 'service' name='Service Home Page' %}">
+              <img src="{{ media_url }}/{{ secondary_box_image_2 }}" alt="{{ secondary_box_image_2 }}">
+	    </a>
           </div>
           <div class="secondary-box-heading">
             <a href="{% url 'service' name='Service Home Page' %}">SERVICES</a>
@@ -75,7 +79,9 @@
       <li>
         <div class="secondary-box">
           <div class="secondary-box-bgimage">
-            <img src="{{ media_url }}/{{ secondary_box_image_4 }}" alt="{{ secondary_box_image_4 }}">
+	    <a href="{% url 'news' %}">
+              <img src="{{ media_url }}/{{ secondary_box_image_4 }}" alt="{{ secondary_box_image_4 }}">
+	    </a>
           </div>
           <div class="secondary-box-heading">
             <a href="{% url 'news' %}">NEWS</a>
